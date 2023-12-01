@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:schema="http://schema.org/">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/report.css" />
+		<script src="scripts/report.js"></script>
+
+		<title property="schema:name">BotaniqScape - Technical Report</title>
+		<meta property="schema:description" content="The Technical Report for the BotaniqScape Botanical Garden Explorer Website." />
+		<meta property="schema:datePublished" content="2023-12-01" />
+
+		<div typeof="schema:author">
+			<div typeof="schema:Person">
+				<meta property="schema:name" content="Alex Amarandei" />
+				<meta property="schema:jobTitle" content="Software Engineer" />
+				<meta property="schema:sameAs" content="https://www.linkedin.com/in/alex-amarandei" />
+			</div>
+
+			<div typeof="schema:Person">
+				<meta property="schema:name" content="Andrei Zaharia" />
+				<meta property="schema:jobTitle" content="Software Engineer" />
+				<meta property="schema:sameAs" content="https://www.linkedin.com/in/andrei-zaharia-a34aa217a/" />
+			</div>
+		</div>
+	</head>
+
+	<article>
+		<header>
+			<h1>BotaniqScape - Technical Report</h1>
+		</header>
+	</article>
+
+	<div role="contentinfo">
+		<ol role="directory">
+			<li>
+				<a href="#abstract">Abstract</a>
+			</li>
+			<li>
+				<a href="#introduction">Introduction</a>
+			</li>
+			<li>
+				<a href="#internal-structures">Internal Data Structures/Models</a>
+				<ol>
+					<li>
+						<a href="#models">Models</a>
+					</li>
+					<li>
+						<a href="#apis">APIs</a>
+					</li>
+					<li>
+						<a href="#statecharts">Statecharts</a>
+					</li>
+					<li>
+						<a href="#shacl-validation">SHACL Validation</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#external-sources">External Data Sources</a>
+				<ol role="directory">
+					<li>
+						<a href="#public-web-services">Public Web Services</a>
+					</li>
+					<li>
+						<a href="#private-apis">Private APIs</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#linked-data-principles">Conformance to Linked Data Principles</a>
+			</li>
+			<li>
+				<a href="#web-app-development">Preliminary Considerations for Web Application Development</a>
+				<ol role="directory">
+					<li>
+						<a href="#tech-used">Frameworks and Technologies Used</a>
+					</li>
+					<li>
+						<a href="#dev-methodology">Development Methodology</a>
+					</li>
+					<li>
+						<a href="#security-considerations">Security Considerations</a>
+					</li>
+					<li>
+						<a href="#scalability-performance">Scalability and Performance Considerations</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#data-handling-processing">Detailed Analysis of Data Handling and Processing</a>
+				<ol role="directory">
+					<li>
+						<a href="#data-collection-processing">Data Collection, Processing, and Storage</a>
+					</li>
+					<li>
+						<a href="#validation">Data Validation and Sanitization</a>
+					</li>
+					<li>
+						<a href="#error-handling">Error Handling and Exceptions</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#development-blog">Development Process Blog</a>
+				<ol role="directory">
+					<li>
+						<a href="#blog-introduction">Introduction</a>
+					</li>
+					<li>
+						<a href="#blog-milestones">Milestones and Achievements</a>
+					</li>
+					<li>
+						<a href="#blog-challenges">Challenges Faced</a>
+					</li>
+					<li>
+						<a href="#blog-lessons">Lessons Learned</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#authors-socials">Authors</a>
+				<ol role="directory">
+					<li>
+						<a href="#author-1">Alex Amarandei</a>
+					</li>
+					<li>
+						<a href="#author-2">Andrei Zaharia</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#acks">Acknowledgements</a>
+			</li>
+			<li>
+				<a href="#biblio-references">References</a>
+			</li>
+			<li>
+				<a href="#license">License</a>
+			</li>
+		</ol>
+	</div>
+
+	<section typeof="schema:abstract" id="abstract" role="doc-abstract">
+		<h2><span>1. </span>Abstract</h2>
+		<p>
+			Embark on a botanical journey like never before with <b>BotaniqScape</b>, an immersive and captivating social platform designed
+			to revolutionize the way we explore and connect with the wonders of botanical gardens.
+		</p>
+	</section>
+
+	<section typeof="schema:about" id="introduction" role="doc-introduction">
+		<h2><span>2. </span>Introduction</h2>
+		<ul>
+			<li>
+				<h4>Discover a World of Possibilities</h4>
+				<p>
+					BotaniqScape goes beyond traditional mapping services, offering a dynamic and user-friendly digital cartography
+					experience. Explore the enchanting layouts of botanical gardens from the palm of your hand, bringing the magic of these
+					green sanctuaries directly to your device.
+				</p>
+			</li>
+			<li>
+				<h4>Ignite Your Curiosity</h4>
+				<p>
+					Delve into a treasure trove of educational insights, unlocking the secrets of diverse plant species. BotaniqScape serves
+					as your botanical encyclopedia, providing a deeper understanding of plant classification, conservation efforts, and the
+					fascinating world of flora.
+				</p>
+			</li>
+			<li>
+				<h4>Engage in Interactive Adventures</h4>
+				<p>
+					Participate in a myriad of engaging activities, from curated guided tours to captivating plant and art exhibitions.
+					Contribute your own experiences by adding comments, images, and establishing connections between objects, creating a
+					vibrant and collaborative community within the botanical realm.
+				</p>
+			</li>
+			<li>
+				<h4>Seamless Knowledge Integration</h4>
+				<p>
+					BotaniqScape seamlessly integrates knowledge through SPARQL endpoints, ensuring an enriched experience. Explore a wealth
+					of botanical wisdom sourced from DBpedia and Wikidata, expanding your understanding of the natural world with every
+					interaction.
+				</p>
+			</li>
+			<li>
+				<h4>Bonus: Elevate Your Experience with Conversational Bliss</h4>
+				<p>
+					As a special bonus, BotaniqScape introduces multilingual conversational interactions. Stay informed with personalized
+					notifications on tours, events, and exhibitions, making your botanical adventure not just educational but also socially
+					rewarding.
+				</p>
+			</li>
+		</ul>
+		<hr />
+		<q
+			>BotaniqScape isn't just an app; it's a gateway to a vibrant community of botanical enthusiasts. Join us as we redefine how
+			botanical gardens are explored, shared, and celebrated. Let BotaniqScape be your companion in transforming ordinary moments into
+			extraordinary botanical adventures. Welcome to a world where every plant tells a story, and every user contributes to an
+			ever-growing tapestry of botanical wonders.</q
+		>
+
+		<h5 style="text-align: right">The Authors</h5>
+		<hr />
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="internal-structures">
+		<h2 itemprop="schema:name">Internal Data Structures/Models</h2>
+		<p itemprop="schema:description">Lorem Ipsum.</p>
+
+		<section itemscope itemtype="schema:CreativeWork" id="models">
+			<h3 itemprop="schema:name">Models</h3>
+			<div itemprop="schema:description">
+				<p>Our internal models serve as the backbone, enabling BotaniqScape to represent and organize botanical data.</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="apis">
+			<h3 itemprop="schema:name">APIs</h3>
+			<div itemprop="schema:description">
+				<p>The APIs in BotaniqScape facilitate seamless interactions, connecting users with a wealth of botanical information.</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="statecharts">
+			<h3 itemprop="schema:name">Statecharts</h3>
+			<div itemprop="schema:description">
+				<p>Our statecharts contribute to the dynamic nature of BotaniqScape, orchestrating user interactions and experiences.</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="shacl-validation">
+			<h3 itemprop="schema:name">SHACL Validation</h3>
+			<div itemprop="schema:description">
+				<p>SHACL validation ensures the integrity and quality of botanical data, enhancing the reliability of BotaniqScape.</p>
+			</div>
+		</section>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="external-sources">
+		<h2 itemprop="schema:name">External Data Sources</h2>
+
+		<section itemscope itemtype="schema:CreativeWork" id="public-web-services">
+			<h3 itemprop="schema:name">Public Web Services</h3>
+			<div itemprop="schema:description">
+				<p>Explore a wealth of botanical information through public web services integrated into BotaniqScape...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="private-apis">
+			<h3 itemprop="schema:name">Private APIs</h3>
+			<div itemprop="schema:description">
+				<p>Private APIs enhance the functionality of BotaniqScape, offering exclusive features and data access...</p>
+			</div>
+		</section>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="linked-data-principles">
+		<h2 itemprop="schema:name">Conformance to Linked Data Principles</h2>
+		<div itemprop="schema:description">
+			<p>BotaniqScape adheres to linked data principles, ensuring seamless integration and interoperability...</p>
+		</div>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="web-app-development">
+		<h2 itemprop="schema:name">Preliminary Considerations for Web Application Development</h2>
+
+		<section itemscope itemtype="schema:CreativeWork" id="tech-used">
+			<h3 itemprop="schema:name">Frameworks and Technologies Used</h3>
+			<div itemprop="schema:description">
+				<p>BotaniqScape leverages cutting-edge frameworks and technologies to deliver a robust web application experience...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="dev-methodology">
+			<h3 itemprop="schema:name">Development Methodology</h3>
+			<div itemprop="schema:description">
+				<p>The development methodology employed in crafting BotaniqScape ensures efficiency and quality in every aspect...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="security-considerations">
+			<h3 itemprop="schema:name">Security Considerations</h3>
+			<div itemprop="schema:description">
+				<p>Security is a top priority in the development of BotaniqScape, safeguarding user data and interactions...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="scalability-performance">
+			<h3 itemprop="schema:name">Scalability and Performance Considerations</h3>
+			<div itemprop="schema:description">
+				<p>BotaniqScape is designed with scalability and performance in mind, ensuring a seamless user experience...</p>
+			</div>
+		</section>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="data-handling-processing">
+		<h2 itemprop="schema:name">Detailed Analysis of Data Handling and Processing</h2>
+
+		<section itemscope itemtype="schema:CreativeWork" id="data-collection-processing">
+			<h3 itemprop="schema:name">Data Collection, Processing, and Storage</h3>
+			<div itemprop="schema:description">
+				<p>BotaniqScape employs robust data handling processes, ensuring efficient collection, processing, and secure storage...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="validation">
+			<h3 itemprop="schema:name">Data Validation and Sanitization</h3>
+			<div itemprop="schema:description">
+				<p>Stringent data validation and sanitization protocols are implemented to maintain data accuracy and integrity...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="error-handling">
+			<h3 itemprop="schema:name">Error Handling and Exceptions</h3>
+			<div itemprop="schema:description">
+				<p>
+					BotaniqScape incorporates robust error handling mechanisms to ensure a seamless user experience even in unforeseen
+					circumstances...
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="development-blog">
+		<h2 itemprop="schema:name">Development Process Blog</h2>
+
+		<section itemscope itemtype="schema:CreativeWork" id="blog-introduction">
+			<h3 itemprop="schema:name">Introduction</h3>
+			<div itemprop="schema:description">
+				<p>Get insights into the inception and vision behind BotaniqScape through our development blog's introductory posts...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="blog-milestones">
+			<h3 itemprop="schema:name">Milestones and Achievements</h3>
+			<div itemprop="schema:description">
+				<p>Track the remarkable milestones and achievements in the development journey of BotaniqScape...</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="blog-challenges">
+			<h3 itemprop="schema:name">Challenges Faced</h3>
+			<div itemprop="schema:description">
+				<p>
+					Explore the challenges encountered during the development of BotaniqScape and the strategies employed to overcome
+					them...
+				</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:CreativeWork" id="blog-lessons">
+			<h3 itemprop="schema:name">Lessons Learned</h3>
+			<div itemprop="schema:description">
+				<p>Discover valuable lessons learned throughout the development process, contributing to continuous improvement...</p>
+			</div>
+		</section>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="authors-socials">
+		<h2 itemprop="schema:name">Authors</h2>
+
+		<section itemscope itemtype="schema:Person" id="author-1">
+			<h3 itemprop="schema:name">Alex Amarandei</h3>
+			<div itemprop="schema:description">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit justo vel tortor venenatis, ac cursus tortor
+					facilisis...
+				</p>
+			</div>
+		</section>
+
+		<section itemscope itemtype="schema:Person" id="author-2">
+			<h3 itemprop="schema:name">Andrei Zaharia</h3>
+			<div itemprop="schema:description">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit justo vel tortor venenatis, ac cursus tortor
+					facilisis...
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="acks">
+		<h2 itemprop="schema:name">Acknowledgements</h2>
+		<div itemprop="schema:description">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit justo vel tortor venenatis, ac cursus tortor
+				facilisis...
+			</p>
+		</div>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="biblio-references">
+		<h2 itemprop="schema:name">References</h2>
+		<div itemprop="schema:description">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit justo vel tortor venenatis, ac cursus tortor
+				facilisis...
+			</p>
+		</div>
+	</section>
+
+	<section itemscope itemtype="schema:CreativeWork" id="license">
+		<h2 itemprop="schema:name">License</h2>
+		<div itemprop="schema:description">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit justo vel tortor venenatis, ac cursus tortor
+				facilisis...
+			</p>
+		</div>
+	</section>
+</html>
