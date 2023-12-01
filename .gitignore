@@ -27,3 +27,5 @@ doc/api/
 .flutter-plugins-dependencies
 
 APIs.md
+
+*/.DS_Store

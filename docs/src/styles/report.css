@@ -398,6 +398,19 @@ q {
     font-style: italic;
 }
 
+span.mention {
+    color: gray;
+    font-weight: 400;
+    font-style: italic;
+    background-color: lightyellow;
+}
+
+li.model {
+    font-weight: 400;
+    font-style: italic;
+    background-color: rgb(218, 239, 218);
+}
+
 /* .opalescent-background {
     background: linear-gradient(to bottom, #f4f4f4, #d9d9d9);
 } */
