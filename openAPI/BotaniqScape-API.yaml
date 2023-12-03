@@ -1,0 +1,1522 @@
+openapi: 3.0.0
+info:
+  title: Garden API
+  description: API for managing gardens, events, exhibition, plants, and user interactions
+  version: 1.0.0
+tags:
+  - name: Gardens
+    description: APIs related to gardens
+
+  - name: Events
+    description: APIs related to events
+
+  - name: Exhibitions
+    description: APIs related to exhibition
+
+  - name: Plants
+    description: APIs related to plants
+
+  - name: Users
+    description: APIs related to users
+
+  - name: Reviews
+    description: APIs related to reviews
+  
+  - name: Security and Authentication
+    description: APIs reltated to security
+    
+  - name: Feedback
+    description: APIs reltated to feedback
+
+
+paths:
+  /gardens/{gardenId}:
+    get:
+      tags:
+        - Gardens
+      summary: Get a garden by ID
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: string
+          description: The ID of the garden to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '404':
+          description: Garden not found
+
+    put:
+      tags:
+        - Gardens
+      summary: Update a garden by ID
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: string
+          description: The ID of the garden to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Garden'
+        description: Updated garden data
+      responses:
+        '204':
+          description: Successful update
+        '404':
+          description: Garden not found
+
+    delete:
+      tags:
+        - Gardens
+      summary: Delete a garden by ID
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: string
+          description: The ID of the garden to delete
+      responses:
+        '204':
+          description: Successful deletion
+        '404':
+          description: Garden not found
+
+  /gardens:
+    get:
+      tags:
+        - Gardens
+      summary: Get all gardens
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Garden'
+
+    post:
+      tags:
+        - Gardens
+      summary: Create a new garden
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Garden'
+      responses:
+        '201':
+          description: Garden created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+
+  /gardens/location:
+    get:
+      tags:
+        - Gardens
+      summary: Get gardens by location
+      parameters:
+        - in: query
+          name: Location
+          required: true
+          schema:
+            $ref: '#/components/schemas/Location'
+          description: The location to filter gardens by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Garden'
+        '404':
+          description: No gardens found for the specified location
+          
+  /gardens/{gardenId}/plants:
+    get:
+      tags:
+        - Gardens
+      summary: Get plants by garden
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: string
+          description: The ID of the garden to filter plants by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plant'
+        '404':
+          description: No plants found for the specified garden
+  
+  /gardens/{gardenId}/events:
+    get:
+      tags:
+        - Gardens
+      summary: Get events by garden
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: string
+          description: The ID of the garden to filter events by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: No events found for the specified garden
+          
+  /gardens/{gardenId}/exhibition:
+    get:
+      tags:
+        - Gardens
+      summary: Get exhibition by garden
+      parameters:
+        - in: path
+          name: gardenId
+          required: true
+          schema:
+            type: string
+          description: The ID of the garden to filter exhibition by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exhibition'
+        '404':
+          description: No exhibition found for the specified garden
+  
+  /events/{eventId}:
+    get:
+      tags:
+        - Events
+      summary: Get an event by ID
+      parameters:
+        - in: path
+          name: eventId
+          required: true
+          schema:
+            type: string
+          description: The ID of the event to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        '404':
+          description: Event not found
+
+    put:
+      tags:
+        - Events
+      summary: Update an event by ID
+      parameters:
+        - in: path
+          name: eventId
+          required: true
+          schema:
+            type: string
+          description: The ID of the event to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+        description: Updated event data
+      responses:
+        '204':
+          description: Successful update
+        '404':
+          description: Event not found
+
+    delete:
+      tags:
+        - Events
+      summary: Delete an event by ID
+      parameters:
+        - in: path
+          name: eventId
+          required: true
+          schema:
+            type: string
+          description: The ID of the event to delete
+      responses:
+        '204':
+          description: Successful deletion
+        '404':
+          description: Event not found
+
+  /events:
+    get:
+      tags:
+        - Events
+      summary: Get all events
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+
+    post:
+      tags:
+        - Events
+      summary: Create a new event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '201':
+          description: Event created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+
+
+
+  /events/dateRange:
+    get:
+      tags:
+        - Events
+      summary: Get events by date range
+      parameters:
+        - in: query
+          name: startDate
+          required: true
+          schema:
+            type: string
+            format: date-time
+          description: The start date of the range
+        - in: query
+          name: endDate
+          required: true
+          schema:
+            type: string
+            format: date-time
+          description: The end date of the range
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: No events found within the specified date range
+
+  /events/location:
+    get:
+      tags:
+        - Events
+      summary: Get events by location
+      parameters:
+        - in: query
+          name: location
+          required: true
+          schema:
+            $ref: '#/components/schemas/Location'
+          description: The location to filter events by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: No events found for the specified location
+
+  
+  /exhibition/{exhibitionId}:
+    get:
+      tags:
+        - Exhibitions
+      summary: Get an exhibition by ID
+      parameters:
+        - in: path
+          name: exhibitionId
+          required: true
+          schema:
+            type: string
+          description: The ID of the exhibition to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Exhibition'
+        '404':
+          description: Exhibition not found
+
+    put:
+      tags:
+        - Exhibitions
+      summary: Update an exhibition by ID
+      parameters:
+        - in: path
+          name: exhibitionId
+          required: true
+          schema:
+            type: string
+          description: The ID of the exhibition to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Exhibition'
+        description: Updated exhibition data
+      responses:
+        '204':
+          description: Successful update
+        '404':
+          description: Exhibition not found
+
+    delete:
+      tags:
+        - Exhibitions
+      summary: Delete an exhibition by ID
+      parameters:
+        - in: path
+          name: exhibitionId
+          required: true
+          schema:
+            type: string
+          description: The ID of the exhibition to delete
+      responses:
+        '204':
+          description: Successful deletion
+        '404':
+          description: Exhibition not found
+
+  /exhibition:
+    get:
+      tags:
+        - Exhibitions
+      summary: Get all exhibition
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exhibition'
+
+    post:
+      tags:
+        - Exhibitions
+      summary: Create a new exhibition
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Exhibition'
+        description: New exhibition data
+      responses:
+        '201':
+          description: Exhibition created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Exhibition'
+
+
+
+  /exhibition/dateRange:
+    get:
+      tags:
+        - Exhibitions
+      summary: Get exhibition by date range
+      parameters:
+        - in: query
+          name: startDate
+          required: true
+          schema:
+            type: string
+            format: date
+          description: The start date of the range
+        - in: query
+          name: endDate
+          required: true
+          schema:
+            type: string
+            format: date
+          description: The end date of the range
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exhibition'
+        '404':
+          description: No exhibition found within the specified date range
+
+
+
+  /exhibition/location:
+    get:
+      tags:
+        - Exhibitions
+      summary: Get exhibition by location
+      parameters:
+        - in: query
+          name: location
+          required: true
+          schema:
+            $ref: '#/components/schemas/Location'
+          description: The location to filter exhibition by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exhibition'
+        '404':
+          description: No exhibition found for the specified location
+          
+          
+  /exhibition/{exhibitionId}/plants:
+    get:
+      tags:
+        - Exhibitions
+      summary: Get plants by exhibition
+      parameters:
+        - in: path
+          name: exhibitionId
+          required: true
+          schema:
+            type: string
+          description: The ID of the exhibition to filter plants by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plant'
+        '404':
+          description: No plants found for the specified exhibition
+          
+  /plants/{plantId}:
+    get:
+      tags:
+        - Plants
+      summary: Get a plant by ID
+      parameters:
+        - in: path
+          name: plantId
+          required: true
+          schema:
+            type: string
+          description: The ID of the plant to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plant'
+        '404':
+          description: Plant not found
+
+    put:
+      tags:
+        - Plants
+      summary: Update a plant by ID
+      parameters:
+        - in: path
+          name: plantId
+          required: true
+          schema:
+            type: string
+          description: The ID of the plant to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Plant'
+        description: Updated plant data
+      responses:
+        '204':
+          description: Successful update
+        '404':
+          description: Plant not found
+
+    delete:
+      tags:
+        - Plants
+      summary: Delete a plant by ID
+      parameters:
+        - in: path
+          name: plantId
+          required: true
+          schema:
+            type: string
+          description: The ID of the plant to delete
+      responses:
+        '204':
+          description: Successful deletion
+        '404':
+          description: Plant not found
+
+  /plants:
+    get:
+      tags:
+        - Plants
+      summary: Get all plants
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plant'
+
+    post:
+      tags:
+        - Plants
+      summary: Create a new plant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Plant'
+      responses:
+        '201':
+          description: Plant created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plant'
+
+  /plants/season:
+    get:
+      tags:
+        - Plants
+      summary: Get plants by season
+      parameters:
+        - in: query
+          name: season
+          required: true
+          schema:
+            type: string
+          description: The season to filter plants by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plant'
+        '404':
+          description: No plants found for the specified season
+
+  /plants/{plantId}/events:
+    get:
+      tags:
+        - Plants
+      summary: Get events by plant
+      parameters:
+        - in: path
+          name: plantId
+          required: true
+          schema:
+            type: string
+          description: The ID of the plant to filter events by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: No events found for the specified plant
+
+  /plants/{plantId}/exhibition:
+    get:
+      tags:
+        - Plants
+      summary: Get exhibition by plant
+      parameters:
+        - in: path
+          name: plantId
+          required: true
+          schema:
+            type: string
+          description: The ID of the plant to filter exhibition by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exhibition'
+        '404':
+          description: No exhibition found for the specified plant
+          
+  /reviews:
+    post:
+      tags:
+        - Reviews
+      summary: Add a review for an item
+      parameters:
+        - in: query
+          name: itemId
+          required: true
+          schema:
+            type: string
+          description: The ID of the item for which the review is being added
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Review'
+        description: New review data
+      responses:
+        '201':
+          description: Review added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+
+  /reviews/item/{itemId}:
+    get:
+      tags:
+        - Reviews
+      summary: Get reviews by item
+      parameters:
+        - in: path
+          name: itemId
+          required: true
+          schema:
+            type: string
+          description: The ID of the item to filter reviews by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+        '404':
+          description: No reviews found for the specified item
+
+  /reviews/user/{username}:
+    get:
+      tags:
+        - Reviews
+      summary: Get reviews by user
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user to filter reviews by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+        '404':
+          description: No reviews found for the specified user
+
+
+  /security/authenticate:
+    post:
+      tags:
+        - Security and Authentication
+      summary: Authenticate a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: The username of the user
+                password:
+                  type: string
+                  description: The password of the user
+              required:
+                - username
+                - password
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    description: Access token for the authenticated user
+        '401':
+          description: Authentication failed
+
+  /security/authorize:
+    post:
+      tags:
+        - Security and Authentication
+      summary: Authorize a user based on role
+      parameters:
+        - in: query
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user to authorize
+        - in: query
+          name: role
+          required: true
+          schema:
+            type: string
+          description: The role to authorize
+      responses:
+        '200':
+          description: Authorization successful
+        '401':
+          description: Authorization failed
+
+  /security/register:
+    post:
+      tags:
+        - Security and Authentication
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  
+  
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Get all users
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+  /users/{username}:
+    get:
+      tags:
+        - Users
+      summary: Get a user by ID
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+
+    delete:
+      tags:
+        - Users
+      summary: Delete a user by ID
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user to delete
+      responses:
+        '204':
+          description: Successful deletion
+        '404':
+          description: User not found
+
+    put:
+      tags:
+        - Users
+      summary: Update a user by ID
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: Updated user details
+      responses:
+        '204':
+          description: Successful update
+        '404':
+          description: User not found
+
+  /users/email:
+    get:
+      tags:
+        - Users
+      summary: Get a user by email
+      parameters:
+        - in: query
+          name: userEmail
+          required: true
+          schema:
+            type: string
+            format: email
+          description: The email address of the user to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+
+  /users/phone:
+    get:
+      tags:
+        - Users
+      summary: Get a user by phone number
+      parameters:
+        - in: query
+          name: userPhone
+          required: true
+          schema:
+            type: string
+          description: The phone number of the user to retrieve
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+          
+          
+  /feedback/reportIssue:
+    post:
+      tags:
+        - Feedback
+      summary: Report an issue for an item
+      parameters:
+        - in: query
+          name: itemId
+          required: true
+          schema:
+            type: string
+          description: The ID of the item for which the issue is being reported
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                issueData:
+                  type: string
+                  description: Description of the reported issue
+              required:
+                - issueData
+        description: Issue report data
+      responses:
+        '201':
+          description: Issue reported successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reportId:
+                    type: integer
+                    format: int64
+                    description: The ID of the generated issue report
+
+  /feedback/item/{itemId}:
+    get:
+      tags:
+        - Feedback
+      summary: Get feedback by item
+      parameters:
+        - in: path
+          name: itemId
+          required: true
+          schema:
+            type: string
+          description: The ID of the item to filter feedback by
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    reportId:
+                      type: integer
+                      format: int64
+                      description: The ID of the feedback report
+                    issueData:
+                      type: string
+                      description: Description of the reported issue
+                    date:
+                      type: string
+                      format: date-time
+                      description: Date and time of the feedback report
+        '404':
+          description: No feedback found for the specified item
+
+  /feedback/generateReport:
+    get:
+      tags:
+        - Feedback
+      summary: Generate a report of feedback within a date range
+      parameters:
+        - in: query
+          name: startDate
+          required: true
+          schema:
+            type: string
+            format: date
+          description: The start date of the date range
+        - in: query
+          name: endDate
+          required: true
+          schema:
+            type: string
+            format: date
+          description: The end date of the date range
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    reportId:
+                      type: integer
+                      format: int64
+                      description: The ID of the feedback report
+                    issueData:
+                      type: string
+                      description: Description of the reported issue
+                    date:
+                      type: string
+                      format: date-time
+                      description: Date and time of the feedback report
+        '404':
+          description: No feedback found within the specified date range
+                
+# Similar paths for events, exhibition, plants, and other APIs...
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: The first name of the user
+        lastName:
+          type: string
+          description: The last name of the user
+        birthday:
+          type: string
+          format: date
+          description: The birthday of the user
+        photos:
+          type: array
+          items:
+            type: string
+          description: List of photo URLs associated with the user
+        username:
+          type: string
+          description: The username of the user
+        password:
+          type: string
+          description: The password of the user
+        email:
+          type: string
+          format: email
+          description: The email address of the user
+        phone:
+          type: string
+          description: The phone number of the user
+        role:
+          type: string
+          description: The role of the user (e.g., admin, regular user)
+      example:
+        id: 1
+        firstName: John
+        lastName: Doe
+        birthday: "1990-01-01"
+        photos:
+          - Photo1.jpg
+          - Photo2.jpg
+        username: johndoe123
+        password: securepassword
+        email: john.doe@example.com
+        phone: "+1234567890"
+        role: admin
+      required:
+        - firstName
+        - lastName
+        - birthday
+        - username
+        - password
+        - email
+        - phone
+        - role
+          
+          
+    Garden:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the garden
+        name:
+          type: string
+          description: The name of the garden
+        description:
+          type: string
+          description: A brief description of the garden
+        location:
+          $ref: '#/components/schemas/Location'
+        eventList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+          description: List of events associated with the garden
+        exhibitionList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Exhibition'
+          description: List of exhibition associated with the garden
+        images:
+          type: array
+          items:
+            type: string
+          description: List of images associated with the garden
+        resources:
+          type: array
+          items:
+            type: string
+          description: List of resources associated with the garden
+      required:
+        - id
+        - name
+        - description
+        - location
+      example:
+        id: 1
+        name: Garden1
+        description: Beautiful garden with diverse plant life.
+        location: City A
+        eventList:
+          - id: 1
+            name: Event1
+            date: "2023-12-01T18:00:00Z"
+            description: Exciting event with live performances
+            people: 1000
+            ticket: true
+            images:
+              - Image1.jpg
+              - Image2.jpg
+            socialMediaLinks: "https://www.example.com/event1"
+        exhibitionList:
+          - id: 1
+            name: Spring Exhibition
+            date: "2023-04-15"
+            description: Explore a variety of spring blooms!
+            plantList:
+              - id: 3
+                name: Sunflower
+                description: A bright and cheerful summer flower
+              - id: 4
+                name: Daylily
+                description: Beautiful blooms that last for a day
+            images:
+              - Image1.jpg
+              - Image2.jpg
+            resources:
+              - Plant Guide
+              - Event Schedule
+            socialMediaLinks: "https://www.example.com/spring-exhibition"
+        images:
+          - Image1.jpg
+          - Image2.jpg
+        resources:
+          - Resource1
+          - Resource2
+          
+          
+    Coordinates:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+          description: The latitude coordinate
+        longitude:
+          type: number
+          format: double
+          description: The longitude coordinate
+      required:
+        - latitude
+        - longitude
+      example:
+        latitude: 40.7128
+        longitude: -74.0060
+        
+        
+    Location:
+      type: object
+      properties:
+        city:
+          type: string
+          description: The city of the location
+        county:
+          type: string
+          description: The state or county of the location
+        country:
+          type: string
+          description: The country of the location
+        streetName:
+          type: string
+          description: The street name of the location
+        postalCode:
+          type: string
+          description: The postal code of the location
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+        googleMapsLink:
+          type: array
+          items:
+            type: string
+          description: The Google Maps link for the location
+      example:
+        city: City A
+        stateCounty: State A
+        country: Country A
+        streetName: Street A
+        postalCode: "12345"
+        coordinates:
+          latitude: 40.7128
+          longitude: -74.0060
+        googleMapsLink: 
+        - "https://www.google.com/maps?q=40.7128,-74.0060"
+      required:
+        - id
+        - city
+        - county
+        - country
+        - streetName
+        - postalCode
+        - coordinates
+        - googleMapsLink
+        
+        
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the event
+        name:
+          type: string
+          description: The name of the event
+        date:
+          type: string
+          format: date-time
+          description: The date and time of the event
+        description:
+          type: string
+          description: A brief description of the event
+        people:
+          type: integer
+          description: The number of people expected at the event
+        ticket:
+          type: boolean
+          description: Whether the event requires tickets
+        images:
+          type: array
+          items:
+            type: string
+          description: List of images associated with the event
+        socialMediaLinks:
+          type: string
+          description: Link to the event's social media page
+      example:
+        id: 1
+        name: Event1
+        date: "2023-12-01T18:00:00Z"
+        description: Exciting event with live performances
+        people: 1000
+        ticket: true
+        images:
+          - Image1.jpg
+          - Image2.jpg
+        socialMediaLinks: "https://www.example.com/event1"
+      required:
+        - id
+        - name
+        - date
+        - description
+        - people
+        
+    
+    Exhibition:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the exhibition
+        name:
+          type: string
+          description: The name of the exhibition
+        date:
+          type: string
+          format: date
+          description: The date of the exhibition
+        description:
+          type: string
+          description: A brief description of the exhibition
+        plantList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plant'
+          description: List of plants featured in the exhibition
+        images:
+          type: array
+          items:
+            type: string
+          description: List of images associated with the exhibition
+        resources:
+          type: array
+          items:
+            type: string
+          description: List of resources related to the exhibition
+        socialMediaLinks:
+          type: string
+          description: Link to the exhibition's social media page
+      example:
+        id: 1
+        name: Spring Exhibition
+        date: "2023-04-15"
+        description: Explore a variety of spring blooms!
+        plantList:
+          - id: 3
+            name: Sunflower
+            description: A bright and cheerful summer flower
+          - id: 4
+            name: Daylily
+            description: Beautiful blooms that last for a day
+        images:
+          - Image1.jpg
+          - Image2.jpg
+        resources:
+          - Plant Guide
+          - Event Schedule
+        socialMediaLinks: "https://www.example.com/spring-exhibition"
+      required:
+        - id
+        - name
+        - date
+        - description
+        - plantList
+    
+    
+    Plant:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the plant
+        name:
+          type: string
+          description: The name of the plant
+        description:
+          type: string
+          description: A brief description of the plant
+        images:
+          type: array
+          items:
+            type: string
+          description: List of images associated with the plant
+        season:
+          type: string
+          description: The season during which the plant thrives
+        plantHabit:
+          type: string
+          description: The habit or characteristic growth pattern of the plant
+        lifeCycle:
+          type: string
+          description: The life cycle of the plant (e.g., annual, perennial)
+        soilPreferences:
+          type: string
+          description: The soil preferences of the plant
+        gardenOrgURL:
+          type: string
+          description: Link to the plant's page on garden.org
+      example:
+        id: 1
+        name: Rose
+        description: Beautiful flowering plant with thorns
+        images:
+          - Image1.jpg
+          - Image2.jpg
+        season: Spring
+        plantHabit: Shrub
+        lifeCycle: Perennial
+        soilPreferences: Well-drained soil
+        gardenOrgURL: "https://www.garden.org/plants/Rose/"
+      required:
+        - id
+        - name
+        - description
+        - images
+        - gardenOrgURL
+        
+    
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the review
+        reviewDescription:
+          type: string
+          description: The description or content of the review
+        authorUsername:
+          type: string
+          description: Information about the sender (email, phone, username, anonymous)
+        itemId:
+          type: integer
+          description: The unique identifier of the item being reviewed
+      example:
+        id: 1
+        reviewDescription: "Great product, highly recommended!"
+        authorUsername: user
+        itemId: 123
+      required:
+        - id
+        - reviewDescription
+        - authorUsername
+        - itemId
