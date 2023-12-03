@@ -1124,6 +1124,46 @@ paths:
         '404':
           description: No feedback found within the specified date range
                 
+  /conversation/user/{username}:
+    get:
+      summary: Get the conversation by username
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user who started the conversation
+      responses:
+        '200':
+          description: Successful operation
+        '404':
+          description: No conversation found for the specified user
+    post:
+      summary: Add the user conversation
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+          description: The ID of the user who started the conversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation:
+                  type: string
+                  description: The conversation
+              required:
+                - conversation
+      responses:
+        '201':
+          description: Conversation added successfully
+                    
 # Similar paths for events, exhibition, plants, and other APIs...
 components:
   schemas:
