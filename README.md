@@ -75,6 +75,16 @@
   <img src="assets/diagrams/BOGX_C2.jpg" alt="C2 Diagram" />
 </div>
 
+### :camera: OpenAPI Specification
+
+You can find our [OpenAPI]() specification here.
+
+#### Instructions
+
+-   Head over to the [Swagger Website](https://editor.swagger.io/)
+-   Paste the code in [BotaniqScape-API.yaml](https://github.com/Alex-Amarandei/WADE-Botanical-Gardens-Smart-Explorer/blob/main/docs/openAPI/BotaniqScape-API.yaml)
+-   That's it!
+
 ### :space_invader: Tech Stack
 
 <details>
