@@ -82,7 +82,7 @@ You can find our [OpenAPI]() specification here.
 #### Instructions
 
 -   Head over to the [Swagger Website](https://editor.swagger.io/)
--   Paste the code in [BotaniqScape-API.yaml](https://github.com/Alex-Amarandei/WADE-Botanical-Gardens-Smart-Explorer/blob/main/docs/openAPI/BotaniqScape-API.yaml)
+-   Paste the code in [BotaniqScape-API.yaml](https://github.com/Alex-Amarandei/WADE-Botanical-Gardens-Smart-Explorer/tree/main/docs/openAPI/BotaniqScape-API.yaml)
 -   That's it!
 
 ### :space_invader: Tech Stack
