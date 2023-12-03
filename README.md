@@ -62,10 +62,17 @@
 
 ## :star2: About the Project
 
-### :camera: Screenshots
+### :camera: Logo
 
 <div align="center"> 
-  <img src="assets/logo.png" alt="screenshot" />
+  <img src="assets/logo.png" alt="logo" />
+</div>
+
+### :camera: Diagrams
+
+<div align="center"> 
+  <img src="assets/diagrams/BOGX_C1.jpg" alt="C1 Diagram" />
+  <img src="assets/diagrams/BOGX_C2.jpg" alt="C2 Diagram" />
 </div>
 
 ### :space_invader: Tech Stack
