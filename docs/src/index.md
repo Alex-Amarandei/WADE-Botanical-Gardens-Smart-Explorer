@@ -165,7 +165,7 @@ The APIs in BotaniqScape facilitate seamless interactions, connecting users with
     -   **Method:** POST
     -   **Summary:** Create a new garden
     -   **Parameters:**
-        -   **Garden:** The garden informations
+        -   **Garden:** The garden information
 
 -   ##### /gardens/location:
 
@@ -462,6 +462,22 @@ The APIs in BotaniqScape facilitate seamless interactions, connecting users with
         -   **startDate:** The start date of the date range
         -   **endDate:** The end date of the date range
 
+-   Conversation API Endpoints
+
+-   ##### /conversation/{username}:
+
+    -   **Method:** POST
+    -   **Summary:** Add the user conversation
+    -   **Parameters:**
+        -   **userId:** The ID of the user who started the conversation
+
+-   ##### /conversation/{username}:
+
+    -   **Method:** GET
+    -   **Summary:** Get the conversation by username
+    -   **Parameters:**
+        -   **userId:** The ID of the user who started the conversation
+
 ### Statecharts
 
 Our statecharts contribute to the dynamic nature of BotaniqScape, orchestrating user interactions and experiences.
@@ -690,7 +706,15 @@ Our families and friends provided unwavering support, and to the lines of code a
 
 ## References
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit justo vel tortor venenatis, ac cursus tortor facilisis...
+-   [Scholarly HTML](https://www.scholarlyhtml.org/)
+-   [RDF - Resource Description Framework](https://www.w3.org/RDF/)
+-   [RDFa - RDF in Attributes](https://www.w3.org/RDFa/)
+-   [Schema.org](https://schema.org/)
+-   [OpenAPI Specification](https://www.openapis.org/)
+-   [Wikidata](https://www.wikidata.org/)
+-   [DBpedia](https://wiki.dbpedia.org/)
+-   [Garden.org](https://garden.org/)
+-   [Web Application Development and Engineering Course](https://profs.info.uaic.ro/~busaco/teach/courses/wade/index.html)
 
 ## License
 
