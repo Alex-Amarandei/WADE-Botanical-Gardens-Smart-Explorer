@@ -1,7 +1,7 @@
-package com.botaniq.controller;
+package fii.wade.botaniq.controller;
 
-import com.botaniq.model.Garden;
-import com.botaniq.model.Location;
+import fii.wade.botaniq.model.Garden;
+import fii.wade.botaniq.model.Location;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.botaniq.model;
+package fii.wade.botaniq.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,13 +9,13 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Garden {
+public class Exhibition {
     private String id;
     private String name;
+    private String date;
     private String description;
-    private Location location;
-    private List<Event> eventList;
-    private List<Exhibition> exhibitionList;
-    //private List<Photos> photos;
+    private List<Plant> plantList;
+    //private List<Photo> photos;
     private List<String> resources;
+    private String socialMediaLink;
 }

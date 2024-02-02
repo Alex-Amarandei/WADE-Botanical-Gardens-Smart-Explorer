@@ -1,4 +1,4 @@
-package com.botaniq;
+package fii.wade.botaniq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

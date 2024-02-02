@@ -1,6 +1,8 @@
-package com.botaniq.controller;
+package fii.wade.botaniq.controller;
 
-import com.botaniq.model.User;
+import fii.wade.botaniq.model.User;
+import fii.wade.botaniq.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/users")
 public class UsersController {
+
+    @Autowired
+    public UserRepository userRepository;
+
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<>(null, HttpStatus.OK);
@@ -22,7 +28,7 @@ public class UsersController {
 
     @PostMapping
     public ResponseEntity<User> addUser(@RequestBody User user){
-        return new ResponseEntity<>(null, HttpStatus.CREATED);
+        return new ResponseEntity<>(userRepository.addUser(user), HttpStatus.CREATED);
     }
 
     @PutMapping(path = "/{username}")

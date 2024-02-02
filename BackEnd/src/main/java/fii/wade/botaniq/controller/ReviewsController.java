@@ -1,6 +1,6 @@
-package com.botaniq.controller;
+package fii.wade.botaniq.controller;
 
-import com.botaniq.model.Review;
+import fii.wade.botaniq.model.Review;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

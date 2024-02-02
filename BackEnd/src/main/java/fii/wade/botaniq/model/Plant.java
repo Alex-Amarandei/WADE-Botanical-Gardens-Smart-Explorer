@@ -1,4 +1,4 @@
-package com.botaniq.model;
+package fii.wade.botaniq.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

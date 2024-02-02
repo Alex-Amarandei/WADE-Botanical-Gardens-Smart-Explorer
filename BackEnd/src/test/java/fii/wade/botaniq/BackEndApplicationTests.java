@@ -1,4 +1,4 @@
-package com.botaniq;
+package fii.wade.botaniq;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
