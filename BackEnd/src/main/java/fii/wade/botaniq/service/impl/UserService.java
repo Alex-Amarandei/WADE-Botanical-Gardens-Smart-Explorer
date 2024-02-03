@@ -3,6 +3,8 @@ package fii.wade.botaniq.service.impl;
 import fii.wade.botaniq.model.impl.User;
 import fii.wade.botaniq.repository.impl.UserRepository;
 import fii.wade.botaniq.service.BaseService;
+
+import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +38,10 @@ public class UserService implements BaseService<User> {
   public void delete(String id) {
 
     userRepository.findById(id, User.class).ifPresent(user -> userRepository.delete(user));
+  }
+
+  @Override
+  public List<User> getAll() {
+    return userRepository.getAll(User.class);
   }
 }

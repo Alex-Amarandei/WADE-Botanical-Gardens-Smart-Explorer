@@ -1,6 +1,8 @@
 package fii.wade.botaniq.service;
 
 import fii.wade.botaniq.model.BaseEntry;
+
+import java.util.List;
 import java.util.Optional;
 
 public interface BaseService<E extends BaseEntry> {
@@ -12,4 +14,6 @@ public interface BaseService<E extends BaseEntry> {
   Optional<E> update(String id, E e);
 
   void delete(String id);
+
+  List<E> getAll();
 }

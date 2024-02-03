@@ -2,10 +2,13 @@ package fii.wade.botaniq.repository;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import fii.wade.botaniq.model.BaseEntry;
+
+import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,11 @@ public class BaseRepository<T extends BaseEntry> {
 
     dynamoDBMapper.save(entry);
     return entry;
+  }
+
+  public List<T> getAll(Class<T> clazz){
+    DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+    return dynamoDBMapper.scan(clazz, scanExpression);
   }
 
   public Optional<T> findById(String id, Class<T> clazz) {

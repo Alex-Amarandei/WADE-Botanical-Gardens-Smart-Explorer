@@ -14,11 +14,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Getter
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class BaseController<E extends BaseEntry, S extends BaseService<E>> {
 
   protected S service;
+
+  @GetMapping
+  public ResponseEntity<List<E>> getAll() {
+    return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
+  }
 
   @PostMapping
   public ResponseEntity<E> create(@RequestBody E e) {

@@ -3,6 +3,8 @@ package fii.wade.botaniq.service.impl;
 import fii.wade.botaniq.model.impl.Garden;
 import fii.wade.botaniq.repository.impl.GardenRepository;
 import fii.wade.botaniq.service.BaseService;
+
+import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +40,10 @@ public class GardenService implements BaseService<Garden> {
     gardenRepository
         .findById(id, Garden.class)
         .ifPresent(garden -> gardenRepository.delete(garden));
+  }
+
+  @Override
+  public List<Garden> getAll() {
+    return gardenRepository.getAll(Garden.class);
   }
 }
