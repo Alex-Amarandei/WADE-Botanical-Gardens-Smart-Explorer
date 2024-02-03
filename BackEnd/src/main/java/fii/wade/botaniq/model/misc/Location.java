@@ -1,8 +1,8 @@
 package fii.wade.botaniq.model.misc;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +11,17 @@ import lombok.Setter;
 @DynamoDBDocument
 @AllArgsConstructor
 public class Location {
-  private String city;
-  private String county;
-  private String country;
-  private String streetName;
-  private String postalCode;
-  private Coordinates coordinates;
-  private String googleMapsLink;
+
+    @DynamoDBAttribute
+    private String city;
+    @DynamoDBAttribute
+    private String county;
+    @DynamoDBAttribute
+    private String country;
+    @DynamoDBAttribute
+    private String streetName;
+    @DynamoDBAttribute
+    private String postalCode;
+    @DynamoDBAttribute
+    private String googleMapsLink;
 }

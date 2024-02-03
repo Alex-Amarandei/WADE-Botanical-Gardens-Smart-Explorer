@@ -5,10 +5,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import fii.wade.botaniq.model.BaseEntry;
 import fii.wade.botaniq.model.misc.Location;
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,9 +16,12 @@ import lombok.experimental.SuperBuilder;
 @DynamoDBTable(tableName = "garden")
 public class Garden extends BaseEntry {
 
-  @DynamoDBAttribute private String description;
-  @DynamoDBAttribute private Location location;
-  @DynamoDBAttribute private List<Event> eventList;
-  @DynamoDBAttribute private List<Exhibition> exhibitionList;
-  @DynamoDBAttribute private List<String> resources;
+    @DynamoDBAttribute
+    private String description;
+    @DynamoDBAttribute
+    private Location location;
+    @DynamoDBAttribute
+    private List<Event> eventList;
+    @DynamoDBAttribute
+    private List<Exhibition> exhibitionList;
 }

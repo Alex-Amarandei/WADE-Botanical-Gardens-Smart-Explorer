@@ -1,10 +1,11 @@
 package fii.wade.botaniq.model.impl;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.*;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import fii.wade.botaniq.model.BaseEntry;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
@@ -12,10 +13,16 @@ import lombok.experimental.SuperBuilder;
 @DynamoDBTable(tableName = "user")
 public class User extends BaseEntry {
 
-  @DynamoDBAttribute private String firstName;
-  @DynamoDBAttribute private String lastName;
-  @DynamoDBAttribute private String birthday;
-  @DynamoDBAttribute private String password;
-  @DynamoDBAttribute private String email;
-  @DynamoDBAttribute private String phone;
+    @DynamoDBAttribute
+    private String firstName;
+    @DynamoDBAttribute
+    private String lastName;
+    @DynamoDBAttribute
+    private String birthday;
+    @DynamoDBAttribute
+    private String password;
+    @DynamoDBAttribute
+    private String email;
+    @DynamoDBAttribute
+    private String phone;
 }
