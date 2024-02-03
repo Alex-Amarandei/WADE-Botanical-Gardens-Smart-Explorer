@@ -29,7 +29,7 @@ public class UserService implements BaseService<User> {
   @Override
   public Optional<User> update(String id, User user) {
 
-    return userRepository.updateById(id, user, User.class);
+    return userRepository.update(id, user, User.class);
   }
 
   @Override

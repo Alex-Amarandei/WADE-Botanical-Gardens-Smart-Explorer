@@ -8,7 +8,6 @@ import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import fii.wade.botaniq.model.BaseEntry;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -30,34 +29,7 @@ public class BaseRepository<T extends BaseEntry> {
     return Optional.ofNullable(entry);
   }
 
-  public Optional<T> findByPartitionKeyAndSortKey(
-      String partitionKey, String sortKey, Class<T> clazz) {
-
-    T entry = dynamoDBMapper.load(clazz, partitionKey, sortKey);
-    return Optional.ofNullable(entry);
-  }
-
-  public Optional<T> update(String partitionKey, String sortKey, T updatedEntry, Class<T> clazz) {
-
-    Optional<T> entry = findByPartitionKeyAndSortKey(partitionKey, sortKey, clazz);
-
-    if (entry.isPresent()) {
-      dynamoDBMapper.save(
-          updatedEntry,
-          new DynamoDBSaveExpression()
-              .withExpectedEntry(
-                  "id",
-                  new ExpectedAttributeValue(
-                          new AttributeValue().withS(String.valueOf(partitionKey)))
-                      .withComparisonOperator(ComparisonOperator.EQ)));
-
-      return Optional.of(updatedEntry);
-    } else {
-      return Optional.empty();
-    }
-  }
-
-  public Optional<T> updateById(String id, T updatedEntry, Class<T> clazz) {
+  public Optional<T> update(String id, T updatedEntry, Class<T> clazz) {
 
     Optional<T> entry = findById(id, clazz);
 

@@ -29,7 +29,7 @@ public class GardenService implements BaseService<Garden> {
   @Override
   public Optional<Garden> update(String id, Garden garden) {
 
-    return gardenRepository.updateById(id, garden, Garden.class);
+    return gardenRepository.update(id, garden, Garden.class);
   }
 
   @Override
