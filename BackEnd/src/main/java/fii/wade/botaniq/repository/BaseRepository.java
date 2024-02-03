@@ -38,7 +38,7 @@ public abstract class BaseRepository<T extends BaseEntry> {
     return Optional.ofNullable(entry);
   }
 
-  public T update(String partitionKey, String sortKey, T updatedEntry, Class<T> clazz) {
+  public Optional<T> update(String partitionKey, String sortKey, T updatedEntry, Class<T> clazz) {
 
     Optional<T> entry = findByPartitionKeyAndSortKey(partitionKey, sortKey, clazz);
 
@@ -51,28 +51,29 @@ public abstract class BaseRepository<T extends BaseEntry> {
                   new ExpectedAttributeValue(
                           new AttributeValue().withS(String.valueOf(partitionKey)))
                       .withComparisonOperator(ComparisonOperator.EQ)));
-      return updatedEntry;
+
+      return Optional.of(updatedEntry);
     } else {
-      return null;
+      return Optional.empty();
     }
   }
 
-  public T updateById(String id, T updatedEntry, Class<T> clazz) {
+  public Optional<T> updateById(String id, T updatedEntry, Class<T> clazz) {
 
     Optional<T> entry = findById(id, clazz);
 
     if (entry.isPresent()) {
       dynamoDBMapper.save(
-              updatedEntry,
-              new DynamoDBSaveExpression()
-                      .withExpectedEntry(
-                              "id",
-                              new ExpectedAttributeValue(
-                                      new AttributeValue().withS(String.valueOf(id)))
-                                      .withComparisonOperator(ComparisonOperator.EQ)));
-      return updatedEntry;
+          updatedEntry,
+          new DynamoDBSaveExpression()
+              .withExpectedEntry(
+                  "id",
+                  new ExpectedAttributeValue(new AttributeValue().withS(String.valueOf(id)))
+                      .withComparisonOperator(ComparisonOperator.EQ)));
+
+      return Optional.of(updatedEntry);
     } else {
-      return null;
+      return Optional.empty();
     }
   }
 
