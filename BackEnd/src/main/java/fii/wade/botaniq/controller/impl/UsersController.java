@@ -11,5 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Getter
 @RestController
 @RequestMapping(path = "/users")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
-public class UsersController extends BaseController<User, UserService> {}
+public class UsersController extends BaseController<User, UserService> {
+    public UsersController(UserService service) {
+        super(service);
+    }
+}

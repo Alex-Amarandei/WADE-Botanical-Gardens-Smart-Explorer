@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @DynamoDBDocument
-@DynamoDBTable(tableName = "Events")
+@DynamoDBTable(tableName = "event")
 public class Event extends BaseEntry {
 
   @DynamoDBAttribute private String date;

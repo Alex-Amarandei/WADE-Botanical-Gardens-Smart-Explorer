@@ -11,5 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Getter
 @RestController
 @RequestMapping(path = "/reviews")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
-public class ReviewsController extends BaseController<Review, ReviewService> {}
+public class ReviewsController extends BaseController<Review, ReviewService> {
+    public ReviewsController(ReviewService service) {
+        super(service);
+    }
+}

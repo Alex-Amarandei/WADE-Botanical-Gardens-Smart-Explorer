@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @DynamoDBDocument
-@DynamoDBTable(tableName = "Exhibitions")
+@DynamoDBTable(tableName = "exhibition")
 public class Exhibition extends BaseEntry {
 
   @DynamoDBAttribute private String date;

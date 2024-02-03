@@ -11,5 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Getter
 @RestController
 @RequestMapping(path = "/exhibitions")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
-public class ExhibitionsController extends BaseController<Exhibition, ExhibitionService> {}
+public class ExhibitionsController extends BaseController<Exhibition, ExhibitionService> {
+    public ExhibitionsController(ExhibitionService service) {
+        super(service);
+    }
+}

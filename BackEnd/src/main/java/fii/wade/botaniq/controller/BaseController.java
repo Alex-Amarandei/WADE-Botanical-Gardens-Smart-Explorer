@@ -2,7 +2,9 @@ package fii.wade.botaniq.controller;
 
 import fii.wade.botaniq.model.BaseEntry;
 import fii.wade.botaniq.service.BaseService;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Getter
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class BaseController<E extends BaseEntry, S extends BaseService<E>> {
 
   protected S service;

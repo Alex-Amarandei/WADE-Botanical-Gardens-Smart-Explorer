@@ -11,5 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Getter
 @RestController
 @RequestMapping(path = "/plants")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
-public class PlantsController extends BaseController<Plant, PlantService> {}
+public class PlantsController extends BaseController<Plant, PlantService> {
+    public PlantsController(PlantService service) {
+        super(service);
+    }
+}

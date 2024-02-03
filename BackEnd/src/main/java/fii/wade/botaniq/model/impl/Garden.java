@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @DynamoDBDocument
-@DynamoDBTable(tableName = "Gardens")
+@DynamoDBTable(tableName = "garden")
 public class Garden extends BaseEntry {
 
   @DynamoDBAttribute private String description;

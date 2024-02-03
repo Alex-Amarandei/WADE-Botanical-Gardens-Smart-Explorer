@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @DynamoDBDocument
-@DynamoDBTable(tableName = "Reviews")
+@DynamoDBTable(tableName = "review")
 public class Review extends BaseEntry {
 
   @DynamoDBAttribute private String reviewDescription;
