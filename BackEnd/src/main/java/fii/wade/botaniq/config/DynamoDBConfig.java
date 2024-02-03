@@ -6,24 +6,19 @@ import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsyncClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DynamoDBConfig {
 
-  @Value("${amazon.dynamodb.endpoint}")
-  private static String serviceEndpoint;
+  private static final String serviceEndpoint = "dynamodb.eu-central-1.amazonaws.com";
 
-  @Value("${amazon.aws.accesskey}")
-  private static String accessKey;
+  private static final String accessKey = "AKIAVRUVP3AMDBE5F674";
 
-  @Value("${amazon.aws.secretkey}")
-  private static String secretKey;
+  private static final String secretKey = "Hsrk4VC3SsAE2dD6N6jwXTHA9WzFCq1l2w/+oKmC";
 
-  @Value("${amazon.aws.region}")
-  private static String signInRegion;
+  private static final String signInRegion = "eu-central-1";
 
   @Bean
   public DynamoDBMapper provideDynamoDbMapper() {

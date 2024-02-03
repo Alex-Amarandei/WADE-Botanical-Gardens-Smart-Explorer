@@ -7,15 +7,14 @@ import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import fii.wade.botaniq.model.BaseEntry;
 import java.util.Optional;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@SuperBuilder
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public abstract class BaseRepository<T extends BaseEntry> {
+@AllArgsConstructor(onConstructor = @__(@Autowired))
+public class BaseRepository<T extends BaseEntry> {
 
   protected final DynamoDBMapper dynamoDBMapper;
 

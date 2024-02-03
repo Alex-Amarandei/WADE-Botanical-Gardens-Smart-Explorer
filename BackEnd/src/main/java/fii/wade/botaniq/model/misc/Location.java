@@ -8,7 +8,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Builder
 @DynamoDBDocument
 @AllArgsConstructor
 public class Location {

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Getter
-public abstract class BaseController<E extends BaseEntry, S extends BaseService<E>> {
+public class BaseController<E extends BaseEntry, S extends BaseService<E>> {
 
   protected S service;
 

@@ -8,9 +8,8 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
 @DynamoDBDocument
-public abstract class BaseEntry {
+public class BaseEntry {
 
   @DynamoDBHashKey(attributeName = "id")
   private String partitionKey;

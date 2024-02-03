@@ -12,7 +12,6 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
 @DynamoDBDocument
 @DynamoDBTable(tableName = "Gardens")
 public class Garden extends BaseEntry {

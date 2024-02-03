@@ -10,7 +10,6 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
 @DynamoDBDocument
 @DynamoDBTable(tableName = "Reviews")
 public class Review extends BaseEntry {

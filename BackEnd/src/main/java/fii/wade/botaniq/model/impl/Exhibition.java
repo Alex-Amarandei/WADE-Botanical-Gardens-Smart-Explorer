@@ -11,7 +11,6 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
 @DynamoDBDocument
 @DynamoDBTable(tableName = "Exhibitions")
 public class Exhibition extends BaseEntry {

@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
 @DynamoDBDocument
 @DynamoDBTable(tableName = "Users")
 public class User extends BaseEntry {
