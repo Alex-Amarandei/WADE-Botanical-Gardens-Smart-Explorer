@@ -1,8 +1,9 @@
-package fii.wade.botaniq.controller;
+package fii.wade.botaniq.controller.impl;
 
-import fii.wade.botaniq.model.entries.Event;
+import fii.wade.botaniq.controller.BaseController;
+import fii.wade.botaniq.model.impl.Event;
 import fii.wade.botaniq.model.misc.Location;
-import fii.wade.botaniq.repository.repos.EventRepository;
+import fii.wade.botaniq.repository.impl.EventRepository;
 import java.util.List;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -15,33 +16,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/events")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class EventsController {
-
-  private EventRepository eventRepository;
+public class EventsController extends BaseController<Event, EventRepository> {
 
   @GetMapping
   public ResponseEntity<List<Event>> getAllEvents() {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @GetMapping(path = "/{eventId}")
-  public ResponseEntity<Event> getEvent(@PathVariable("eventId") String id) {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @PostMapping
-  public ResponseEntity<Event> addEvent(@RequestBody Event event) {
-    return new ResponseEntity<>(null, HttpStatus.CREATED);
-  }
-
-  @PutMapping(path = "/{eventId}")
-  public ResponseEntity<Event> updateEvent(
-      @PathVariable("eventId") String id, @RequestBody Event event) {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @DeleteMapping(path = "/{eventId}")
-  public ResponseEntity<Event> deleteEvent(@PathVariable("eventId") String id) {
     return new ResponseEntity<>(null, HttpStatus.OK);
   }
 

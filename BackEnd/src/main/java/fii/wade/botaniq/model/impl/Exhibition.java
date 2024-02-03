@@ -1,4 +1,4 @@
-package fii.wade.botaniq.model.entries;
+package fii.wade.botaniq.model.impl;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;

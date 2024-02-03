@@ -1,8 +1,12 @@
-package fii.wade.botaniq.controller;
+package fii.wade.botaniq.controller.impl;
 
-import fii.wade.botaniq.model.entries.Plant;
-import fii.wade.botaniq.repository.repos.PlantRepository;
+import fii.wade.botaniq.controller.BaseController;
+import fii.wade.botaniq.model.impl.Event;
+import fii.wade.botaniq.model.impl.Plant;
 import java.util.List;
+
+import fii.wade.botaniq.repository.impl.EventRepository;
+import fii.wade.botaniq.repository.impl.PlantRepository;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,33 +18,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/plants")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class PlantsController {
-
-  private PlantRepository plantRepository;
+public class PlantsController extends BaseController<Plant, PlantRepository> {
 
   @GetMapping
   public ResponseEntity<List<Plant>> getAllPlants() {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @GetMapping(path = "/{plantId}")
-  public ResponseEntity<Plant> getPlant(@PathVariable("plantId") String id) {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @PostMapping
-  public ResponseEntity<Plant> addPlant(@RequestBody Plant plant) {
-    return new ResponseEntity<>(null, HttpStatus.CREATED);
-  }
-
-  @PutMapping(path = "/{plantId}")
-  public ResponseEntity<Plant> updatePlant(
-      @PathVariable("plantId") String id, @RequestBody Plant plant) {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @DeleteMapping(path = "/{plantId}")
-  public ResponseEntity<Plant> deletePlant(@PathVariable("plantId") String id) {
     return new ResponseEntity<>(null, HttpStatus.OK);
   }
 

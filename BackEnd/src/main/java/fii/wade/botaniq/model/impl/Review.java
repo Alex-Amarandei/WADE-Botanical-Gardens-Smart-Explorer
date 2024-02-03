@@ -1,4 +1,4 @@
-package fii.wade.botaniq.model.entries;
+package fii.wade.botaniq.model.impl;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
@@ -12,12 +12,10 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @DynamoDBDocument
-@DynamoDBTable(tableName = "Plants")
-public class Plant extends BaseEntry {
+@DynamoDBTable(tableName = "Reviews")
+public class Review extends BaseEntry {
 
-  @DynamoDBAttribute private String description;
-  @DynamoDBAttribute private String plantHabit;
-  @DynamoDBAttribute private String lifeCycle;
-  @DynamoDBAttribute private String soilPreferences;
-  @DynamoDBAttribute private String gardenOrgUrl;
+  @DynamoDBAttribute private String reviewDescription;
+  @DynamoDBAttribute private String authorUsername;
+  @DynamoDBAttribute private String itemId;
 }

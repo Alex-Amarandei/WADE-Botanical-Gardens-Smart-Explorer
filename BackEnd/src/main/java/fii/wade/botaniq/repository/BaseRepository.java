@@ -25,6 +25,12 @@ public abstract class BaseRepository<T extends BaseEntry> {
     return entry;
   }
 
+  public Optional<T> findById(String id, Class<T> clazz) {
+
+    T entry = dynamoDBMapper.load(clazz, id);
+    return Optional.ofNullable(entry);
+  }
+
   public Optional<T> findByPartitionKeyAndSortKey(
       String partitionKey, String sortKey, Class<T> clazz) {
 

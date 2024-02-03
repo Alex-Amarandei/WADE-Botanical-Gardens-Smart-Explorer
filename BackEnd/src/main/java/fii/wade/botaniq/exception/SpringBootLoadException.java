@@ -13,7 +13,6 @@ public class SpringBootLoadException extends RuntimeException {
     super(message, cause);
   }
 
-  // Constructor that accepts a cause
   public SpringBootLoadException(Throwable cause) {
     super(cause);
   }

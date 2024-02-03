@@ -1,8 +1,9 @@
-package fii.wade.botaniq.controller;
+package fii.wade.botaniq.controller.impl;
 
-import fii.wade.botaniq.model.entries.Exhibition;
+import fii.wade.botaniq.controller.BaseController;
+import fii.wade.botaniq.model.impl.Exhibition;
 import fii.wade.botaniq.model.misc.Location;
-import fii.wade.botaniq.repository.repos.ExhibitionRepository;
+import fii.wade.botaniq.repository.impl.ExhibitionRepository;
 import java.util.List;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -15,33 +16,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/exhibitions")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class ExhibitionsController {
-
-  private ExhibitionRepository exhibitionRepository;
+public class ExhibitionsController extends BaseController<Exhibition, ExhibitionRepository> {
 
   @GetMapping
   public ResponseEntity<List<Exhibition>> getAllExhibitions() {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @GetMapping(path = "/{exhibitionId}")
-  public ResponseEntity<Exhibition> getExhibition(@PathVariable("exhibitionId") String id) {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @PostMapping
-  public ResponseEntity<Exhibition> addExhibition(@RequestBody Exhibition exhibition) {
-    return new ResponseEntity<>(null, HttpStatus.CREATED);
-  }
-
-  @PutMapping(path = "/{exhibitionId}")
-  public ResponseEntity<Exhibition> updateExhibition(
-      @PathVariable("exhibitionId") String id, @RequestBody Exhibition exhibition) {
-    return new ResponseEntity<>(null, HttpStatus.OK);
-  }
-
-  @DeleteMapping(path = "/{exhibitionId}")
-  public ResponseEntity<Exhibition> deleteExhibition(@PathVariable("exhibitionId") String id) {
     return new ResponseEntity<>(null, HttpStatus.OK);
   }
 
