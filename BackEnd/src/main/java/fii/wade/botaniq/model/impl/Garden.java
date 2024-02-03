@@ -19,6 +19,10 @@ public class Garden extends BaseEntry {
     @DynamoDBAttribute
     private String description;
     @DynamoDBAttribute
+    private String price;
+    @DynamoDBAttribute
+    private Double rating;
+    @DynamoDBAttribute
     private Location location;
     @DynamoDBAttribute
     private List<Event> eventList;
