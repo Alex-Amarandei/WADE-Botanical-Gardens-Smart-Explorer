@@ -10,10 +10,6 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @DynamoDBDocument
 public class BaseEntry {
-
   @DynamoDBHashKey(attributeName = "id")
   private String partitionKey;
-
-  @DynamoDBHashKey(attributeName = "type")
-  private String sortKey;
 }
