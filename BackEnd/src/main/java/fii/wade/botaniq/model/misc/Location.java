@@ -9,19 +9,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @DynamoDBDocument
-@AllArgsConstructor
 public class Location {
 
-    @DynamoDBAttribute
-    private String city;
-    @DynamoDBAttribute
-    private String county;
-    @DynamoDBAttribute
-    private String country;
-    @DynamoDBAttribute
-    private String streetName;
-    @DynamoDBAttribute
-    private String postalCode;
-    @DynamoDBAttribute
-    private String googleMapsLink;
+  @DynamoDBAttribute private String city;
+  @DynamoDBAttribute private String county;
+  @DynamoDBAttribute private String country;
+  @DynamoDBAttribute private String streetName;
+  @DynamoDBAttribute private String postalCode;
+  @DynamoDBAttribute private String googleMapsLink;
 }
