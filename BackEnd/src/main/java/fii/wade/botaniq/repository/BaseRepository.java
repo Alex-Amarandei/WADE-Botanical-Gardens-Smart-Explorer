@@ -57,6 +57,25 @@ public abstract class BaseRepository<T extends BaseEntry> {
     }
   }
 
+  public T updateById(String id, T updatedEntry, Class<T> clazz) {
+
+    Optional<T> entry = findById(id, clazz);
+
+    if (entry.isPresent()) {
+      dynamoDBMapper.save(
+              updatedEntry,
+              new DynamoDBSaveExpression()
+                      .withExpectedEntry(
+                              "id",
+                              new ExpectedAttributeValue(
+                                      new AttributeValue().withS(String.valueOf(id)))
+                                      .withComparisonOperator(ComparisonOperator.EQ)));
+      return updatedEntry;
+    } else {
+      return null;
+    }
+  }
+
   public void delete(T entry) {
 
     dynamoDBMapper.delete(entry);

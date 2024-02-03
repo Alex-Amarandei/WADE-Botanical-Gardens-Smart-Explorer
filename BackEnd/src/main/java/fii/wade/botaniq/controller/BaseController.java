@@ -19,7 +19,7 @@ public abstract class BaseController<E extends BaseEntry, R extends BaseReposito
   @PostMapping
   public ResponseEntity<E> create(@RequestBody E e) {
 
-    return new ResponseEntity<>(repository.save(e), HttpStatus.OK);
+    return new ResponseEntity<>(repository.save(e), HttpStatus.CREATED);
   }
 
   @GetMapping(path = "/{id}")
