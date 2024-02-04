@@ -11,6 +11,8 @@ import lombok.Setter;
 public class Plant {
 
     @DynamoDBAttribute
+    private String name;
+    @DynamoDBAttribute
     private String description;
     @DynamoDBAttribute
     private String plantHabit;
