@@ -13,9 +13,13 @@ import java.util.List;
 public class Exhibition {
 
     @DynamoDBAttribute
+    private String name;
+    @DynamoDBAttribute
     private String season;
     @DynamoDBAttribute
     private String description;
+    @DynamoDBAttribute
+    private String photoUrl;
     @DynamoDBAttribute
     private List<Plant> plantList;
 }

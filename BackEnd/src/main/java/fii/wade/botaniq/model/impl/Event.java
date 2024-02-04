@@ -11,9 +11,13 @@ import lombok.Setter;
 public class Event {
 
     @DynamoDBAttribute
+    private String name;
+    @DynamoDBAttribute
     private String date;
     @DynamoDBAttribute
     private String description;
+    @DynamoDBAttribute
+    private String photoUrl;
     @DynamoDBAttribute
     private String socialMediaLink;
 }

@@ -23,6 +23,8 @@ public class Garden extends BaseEntry {
     @DynamoDBAttribute
     private Double rating;
     @DynamoDBAttribute
+    private String photoUrl;
+    @DynamoDBAttribute
     private Location location;
     @DynamoDBAttribute
     private List<Event> eventList;
