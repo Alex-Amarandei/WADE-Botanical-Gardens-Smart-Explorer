@@ -6,7 +6,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
-import fii.wade.botaniq.model.BaseEntry;
+import fii.wade.botaniq.model.entry.BaseEntry;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +26,7 @@ public class BaseRepository<T extends BaseEntry> {
     return entry;
   }
 
-  public List<T> getAll(Class<T> clazz){
+  public List<T> getAll(Class<T> clazz) {
     DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
     return dynamoDBMapper.scan(clazz, scanExpression);
   }

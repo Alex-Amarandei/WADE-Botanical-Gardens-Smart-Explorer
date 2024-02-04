@@ -1,9 +1,8 @@
 package fii.wade.botaniq.service.impl;
 
-import fii.wade.botaniq.model.impl.User;
+import fii.wade.botaniq.model.entry.impl.User;
 import fii.wade.botaniq.repository.impl.UserRepository;
 import fii.wade.botaniq.service.BaseService;
-
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;

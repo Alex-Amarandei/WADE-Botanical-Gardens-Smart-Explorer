@@ -1,7 +1,8 @@
 package fii.wade.botaniq.controller;
 
-import fii.wade.botaniq.model.BaseEntry;
+import fii.wade.botaniq.model.entry.BaseEntry;
 import fii.wade.botaniq.service.BaseService;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.List;
 
 @Getter
 @AllArgsConstructor(onConstructor = @__(@Autowired))

@@ -1,7 +1,6 @@
 package fii.wade.botaniq.service;
 
-import fii.wade.botaniq.model.BaseEntry;
-
+import fii.wade.botaniq.model.entry.BaseEntry;
 import java.util.List;
 import java.util.Optional;
 
