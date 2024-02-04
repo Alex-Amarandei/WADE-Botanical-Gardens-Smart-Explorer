@@ -15,5 +15,6 @@ public class Plant {
   @DynamoDBAttribute private String plantHabit;
   @DynamoDBAttribute private String lifeCycle;
   @DynamoDBAttribute private String soilPreferences;
+  @DynamoDBAttribute private String photoUrl;
   @DynamoDBAttribute private String gardenOrgUrl;
 }

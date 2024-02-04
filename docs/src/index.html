@@ -107,6 +107,14 @@
 			</ol>
 		</li>
 		<li>
+			<a href="#technical-deep-dive">Technical Deep Dive</a>
+			<ol role="directory">
+				<li>
+					<a href="#backend-application">Backend application</a>
+				</li>
+			</ol>
+		</li>
+		<li>
 			<a href="#authors">Authors</a>
 			<ol role="directory">
 				<li>
@@ -1820,6 +1828,46 @@
 		</div>
 	</section>
 </section>
+<section typeof="schema:CreativeWork" id="technical-deep-dive">
+	<h2 typeof="schema:name">Technical Deep Dive</h2>
+
+	<section typeof="schema:CreativeWork" id="backend-applicatio">
+		<h3 typeof="schema:name">Details regarding the Backend implementation</h3>
+		<div typeof="schema:description">
+			<p>
+				In the implementation of our application, we leveraged the robust capabilities of Spring Boot and Java
+				to develop a seamless BackEnd architecture. Our choice of using Spring Boot allowed us to efficiently
+				expose endpoints for smooth communication between the FrontEnd and BackEnd components.
+			</p>
+			<p>
+				For data storage, we opted for a DynamoDB table, a NoSQL database service, to streamline the management
+				and retrieval of garden-related information. This decision aligns with our commitment to enhancing the
+				overall user experience by ensuring quick and effective data storage and retrieval.
+			</p>
+			<p>
+				Adhering to Java conventions, we organized our codebase into well-structured packages, including
+				controller, service, model, and repository. Within each of these, we further implemented an abstract
+				class, fostering code reusability and minimizing redundancy. This abstraction approach involves creating
+				a dedicated abstract class for controllers, services, repositories, and models, effectively eliminating
+				duplicate code and promoting a cleaner, more maintainable codebase.
+			</p>
+			<p>
+				Moreover, to handle negative scenarios and enhance the robustness of our application, we implemented
+				custom exceptions. These exceptions address specific error scenarios and contribute to more informative
+				error handling, providing a better experience for users and aiding in the troubleshooting process.
+			</p>
+			<p>
+				In summary, our BackEnd implementation revolves around the powerful combination of Spring Boot and Java,
+				leveraging DynamoDB for efficient data management. The adherence to Java conventions, strategic package
+				organization, and the implementation of abstract classes for each essential component showcase our
+				commitment to creating a scalable, maintainable, and robust application. Additionally, the incorporation
+				of custom exceptions underscores our dedication to addressing and managing potential negative flows
+				within the system.
+			</p>
+		</div>
+	</section>
+</section>
+
 
 <section typeof="schema:CreativeWork" id="authors">
 	<h2 typeof="schema:name">Authors</h2>
