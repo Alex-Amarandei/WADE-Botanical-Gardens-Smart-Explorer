@@ -226,10 +226,6 @@ Thank you for choosing BotaniqScape. We hope you enjoy exploring the world of ga
 
 Contributions are always welcome!
 
-## :grey_question: FAQ
-
-:construction: Work in Progress
-
 ## :warning: License
 
 Distributed under the [MIT License](https://opensource.org/license/mit/). See [LICENSE](https://github.com/Alex-Amarandei/WADE-Botanical-Gardens-Smart-Explorer/blob/main/LICENSE) for more information.
