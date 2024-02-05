@@ -128,25 +128,79 @@ You can find our [OpenAPI]() specification here.
 
 ## :toolbox: Getting Started
 
-### :bangbang: Prerequisites
+User Guide for BotaniqScape
 
-:construction: Work in Progress
+Welcome to BotaniqScape, the comprehensive app for exploring gardens, exhibitions, and plant-related information. This guide will help you navigate the app with ease, whether you're a new user or just looking for more information.
 
-### :gear: Installation
+## Getting Started
 
-:construction: Work in Progress
+### Installation and Access
 
-### :test_tube: Running Tests
+- **Mobile Version**: Download the app from your device's app store.
+- **Web Version**: Access the app through its website.
 
-:construction: Work in Progress
+### Home Page
 
-### :running: Run Locally
+Upon entering the app, you are presented with two main options:
 
-:construction: Work in Progress
+1. **Visit Us Button**: Click this to visit the app's GitHub repository.
+2. **Auth Page**: Navigate here to create an account or log in.
 
-### :triangular_flag_on_post: Deployment
+### Authentication Page
 
-:construction: Work in Progress
+- **Create an Account**: If you're a new user, sign up by providing the necessary details.
+- **Log In**: Existing users can log in using their credentials.
+
+## Main Features
+
+### Browsing Gardens
+
+On the main page, you can explore various gardens. Click on a garden to see its events, exhibitions, and detailed information.
+
+### Events and Exhibitions
+
+- **Events**: Clicking on an event redirects you to its social media page for more details.
+- **Exhibitions**: Select an exhibition to view its page within the app, where you can:
+  - Read about the exhibition.
+  - See all plants featured in it.
+  - Click on a plant to learn more about it.
+
+### Burger Menu
+
+- Access your personal information via the burger menu.
+- **AI Voice Assistant**: Interact with the app using voice commands through this feature.
+- **SPARQL Page**: Here, you can:
+  - Execute one of three pre-made queries about plants.
+  - Create and run your own queries to retrieve plant information.
+
+## Learning More about Plants
+
+- **From Exhibition to Plant Details**: While exploring an exhibition, you can click on any plant to navigate to its specific page.
+- **Detailed Plant Information**: On the plant's page, select “Learn More” to perform a SPARQL query. This action gathers all available data about the selected plant, offering in-depth information.
+
+## Tips for a Better Experience
+
+- **Regular Updates**: Keep the app updated for the latest features and improvements.
+- **Feedback**: Use the 'Visit Us' feature for any queries or feedback.
+
+## Troubleshooting
+
+If you encounter any issues, refer to the 'Visit Us' section in the app or contact customer support.
+
+Thank you for choosing BotaniqScape. We hope you enjoy exploring the world of gardens and plants with us!
+
+## Screenshots
+
+![HomePage](images/home_page.png)
+![CreatePage](images/create_page.png)
+![LoginPage](images/login_page.png)
+![MainPage](images/main_page.png)
+![NavBar](images/nav_bar.png)
+![Sparql](images/sparql_page.png)
+![ChatPage](images/chat_page.png){width=800px}
+![GardenPage](images/garden_page.png)
+![ExhibitionPage](images/exhibition_page.png)
+![PlantPage](images/plant_page.png)
 
 ## :compass: Roadmap
 
@@ -158,11 +212,11 @@ You can find our [OpenAPI]() specification here.
 
 > Note: The milestones below will be updated periodically as steps will become increasingly clearer
 
--   [ ] Phase 2
-    -   [ ] Main Functionalities
-    -   [ ] Deployment
-    -   [ ] Integrations via SPARQL queries
-    -   [ ] Updated Documentation
+-   [x] Phase 2
+    -   [x] Main Functionalities
+    -   [x] Deployment
+    -   [x] Integrations via SPARQL queries
+    -   [x] Updated Documentation
 
 ## :wave: Contributing
 
