@@ -191,16 +191,16 @@ Thank you for choosing BotaniqScape. We hope you enjoy exploring the world of ga
 
 ## Screenshots
 
-<img src="images/home_page.png" alt="HomePage">
-		<img src="images/create_page.png" alt="CreatePage">
-		<img src="images/login_page.png" alt="LoginPage">
-		<img src="images/main_page.png" alt="MainPage">
-		<img src="images/nav_bar.png" alt="NavBar">
-		<img src="images/sparql_page.png" alt="Sparql">
-		<img src="images/chat_page.png" alt="ChatPage" style="width: 800px;">
-		<img src="images/garden_page.png" alt="GardenPage">
-		<img src="images/exhibition_page.png" alt="ExhibitionPage">
-		<img src="images/plant_page.png" alt="PlantPage">
+<img src="docs/src/images/home_page.png" alt="HomePage">
+<img src="docs/src/images/create_page.png" alt="CreatePage">
+<img src="docs/src/images/login_page.png" alt="LoginPage">
+<img src="docs/src/images/main_page.png" alt="MainPage">
+<img src="docs/src/images/nav_bar.png" alt="NavBar">
+<img src="docs/src/images/sparql_page.png" alt="Sparql">
+<img src="docs/src/images/chat_page.png" alt="ChatPage" style="width: 800px;">
+<img src="docs/src/images/garden_page.png" alt="GardenPage">
+<img src="docs/src/images/exhibition_page.png" alt="ExhibitionPage">
+<img src="docs/src/images/plant_page.png" alt="PlantPage">
 
 ## :compass: Roadmap
 
