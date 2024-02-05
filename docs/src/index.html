@@ -116,7 +116,7 @@
 					<a href="#frontend-application">FrontEnd application</a>
 				</li>
 				<li>
-					<a href="#cloud-application">Cloud implementation</a>
+					<a href="#cloud-infrastructure">Cloud Infrastructure</a>
 				</li>
 			</ol>
 		</li>
@@ -1948,10 +1948,56 @@
 				</p>
 			</div>
 		</section>
-		<section typeof="schema:CreativeWork" id="cloud-application">
-			<h3 typeof="schema:name">Details regarding the Cloud implementation</h3>
+		<section typeof="schema:CreativeWork" id="cloud-infrastructure">
+			<h3 typeof="schema:name">Details regarding the Cloud Infrastructure</h3>
 			<div typeof="schema:description">
-				<p>TO DO</p>
+				<h4>Flutter/Dart Client Application</h4>
+				<p>This is the presentation layer, implemented as a cross-platform mobile and web application using the
+					Flutter
+					framework and Dart language.</p>
+
+				<h4>AWS Elastic Beanstalk (Java 17 Spring Boot 3)</h4>
+				<p>The backend logic is encapsulated within a Java application built on Spring Boot 3 and JDK 17,
+					provisioned through
+					AWS Elastic Beanstalk.</p>
+
+				<h4>Amazon Virtual Private Cloud (VPC) & Security Groups</h4>
+				<p>The VPC establishes a secure, isolated network boundary for AWS resources, with security groups
+					acting as virtual
+					firewalls.</p>
+
+				<h4>Amazon S3 Ontology Storage</h4>
+				<p>S3 is utilized as a durable, high-availability object storage for ontology datasets.</p>
+
+				<h4>Amazon Neptune</h4>
+				<p>This graph database service is engineered to operate within the VPC, intended to query and navigate
+					complex
+					ontologies.</p>
+
+				<h4>Amazon DynamoDB</h4>
+				<p>The NoSQL database service is populated via a Python-based crawler script, which programmatically
+					aggregates data
+					from garden.org.</p>
+
+				<h4>AWS Lambda (SPARQL and Ontology Processing)</h4>
+				<p>The architecture employs AWS Lambda for executing SPARQL queries and for the intended ontology
+					processing.</p>
+
+				<h4>OpenAI ChatGPT Endpoint with Voice Interaction</h4>
+				<p>The integration of an OpenAI ChatGPT API endpoint extends the application’s capabilities,
+					facilitating voice command
+					interactions.</p>
+
+				<h4>AWS CloudWatch</h4>
+				<p>This monitoring service is configured to collect logs, metrics, and events, ensuring a comprehensive
+					observability
+					platform.</p>
+
+				<h4>Firebase Authentication</h4>
+				<p>Google Firebase is the chosen authentication solution, providing a secure gateway for user identity
+					verification and
+					session management.</p>
+
 			</div>
 		</section>
 	</section>
@@ -2139,7 +2185,8 @@
 			<p>
 				We extend our heartfelt gratitude to
 				<a href="https://profs.info.uaic.ro/~busaco/profile.html" typeof="schema:Person" id="instructor">our
-					instructor</a> whose
+					teacher</a> and <a href="https://profs.info.uaic.ro/~adria/about-me.html" typeof="schema:Person"
+					id="instructor">our instructor</a> whose
 				expertise illuminated our path during the master's degree
 				<a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/">Web Application Development Course</a>.
 			</p>
