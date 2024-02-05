@@ -122,7 +122,7 @@ You can find our OpenAPI specification here.
 -   Events Notifications
 -   Reviews and User Interactions
 -   ChatGPT-powered AI Assistant
--   <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>, <a href="https://www.dbpedia.org/">DBpedia</a>, <a href="https://www.garden.org/">garden.org</a> queries
+-   <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>, <a href="https://www.dbpedia.org/">DBpedia</a>, <a href="https://www.garden.org/">garden.org</a> SPARQL queries
 
 ## :toolbox: Getting Started
 
