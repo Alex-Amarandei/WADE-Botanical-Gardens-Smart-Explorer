@@ -54,10 +54,7 @@
 					<a href="#apis">APIs</a>
 				</li>
 				<li>
-					<a href="#statecharts">Statecharts</a>
-				</li>
-				<li>
-					<a href="#shacl-validation">SHACL Validation</a>
+					<a href="#statechart">Statechart</a>
 				</li>
 			</ol>
 		</li>
@@ -109,6 +106,9 @@
 		<li>
 			<a href="#technical-deep-dive">Technical Deep Dive</a>
 			<ol role="directory">
+				<li>
+					<a href="#infrastructure-diagram">Infrastructure Diagram</a>
+				</li>
 				<li>
 					<a href="#backend-application">Backend application</a>
 				</li>
@@ -1336,23 +1336,12 @@
 		</div>
 	</section>
 
-	<section typeof="schema:CreativeWork" id="statecharts">
-		<h3 typeof="schema:name">Statecharts</h3>
+	<section typeof="schema:CreativeWork" id="statechart">
+		<h3 typeof="schema:name">Statechart</h3>
 		<div typeof="schema:description">
-			<p>Our statecharts contribute to the dynamic nature of BotaniqScape, orchestrating user interactions and
+			<p>Our statechart contribute to the dynamic nature of BotaniqScape, orchestrating user interactions and
 				experiences.</p>
-			<span class="mention" typeof="schema:Comment">🏗️ <strong>Important Mention:</strong> Currently Work in
-				Progress.</span>
-		</div>
-	</section>
-
-	<section typeof="schema:CreativeWork" id="shacl-validation">
-		<h3 typeof="schema:name">SHACL Validation</h3>
-		<div typeof="schema:description">
-			<p>SHACL validation ensures the integrity and quality of RDFa data, enhancing the reliability of
-				BotaniqScape.</p>
-			<span class="mention" typeof="schema:Comment">🏗️ <strong>Important Mention:</strong> Currently Work in
-				Progress.</span>
+			<img src="images/statechart.png" alt="Statechart" style="width: 500px; height: 500px;">
 		</div>
 	</section>
 </section>
@@ -1840,277 +1829,308 @@
 <section typeof="schema:CreativeWork" id="technical-deep-dive">
 	<h2 typeof="schema:name"><span>8. </span>Technical Deep Dive</h2>
 
-	<section typeof="schema:CreativeWork" id="backend-application">
-		<h3 typeof="schema:name">Details regarding the Backend implementation</h3>
-		<div typeof="schema:description">
-			<p>
-				In the implementation of our application, we leveraged the robust capabilities of Spring Boot and Java
-				to develop a seamless BackEnd architecture. Our choice of using Spring Boot allowed us to efficiently
-				expose endpoints for smooth communication between the FrontEnd and BackEnd components.
-			</p>
-			<p>
-				For data storage, we opted for a DynamoDB table, a NoSQL database service, to streamline the management
-				and retrieval of garden-related information. This decision aligns with our commitment to enhancing the
-				overall user experience by ensuring quick and effective data storage and retrieval.
-			</p>
-			<p>
-				Adhering to Java conventions, we organized our codebase into well-structured packages, including
-				controller, service, model, and repository. Within each of these, we further implemented an abstract
-				class, fostering code reusability and minimizing redundancy. This abstraction approach involves creating
-				a dedicated abstract class for controllers, services, repositories, and models, effectively eliminating
-				duplicate code and promoting a cleaner, more maintainable codebase.
-			</p>
-			<p>
-				Moreover, to handle negative scenarios and enhance the robustness of our application, we implemented
-				custom exceptions. These exceptions address specific error scenarios and contribute to more informative
-				error handling, providing a better experience for users and aiding in the troubleshooting process.
-			</p>
-			<p>
-				In summary, our BackEnd implementation revolves around the powerful combination of Spring Boot and Java,
-				leveraging DynamoDB for efficient data management. The adherence to Java conventions, strategic package
-				organization, and the implementation of abstract classes for each essential component showcase our
-				commitment to creating a scalable, maintainable, and robust application. Additionally, the incorporation
-				of custom exceptions underscores our dedication to addressing and managing potential negative flows
-				within the system.
-			</p>
-		</div>
+	<section typeof="schema:CreativeWork" id="infrastructure-diagram">
+		<h3 typeof="schema:name">Infrastructure Diagram</h3>
+
+		<img src="images/BotaniqScape.jpeg" alt="Infrastructure Diagram" style="width: 500px; height: 500px;" />
+
+		<section typeof="schema:CreativeWork" id="backend-application">
+			<h3 typeof="schema:name">Details regarding the Backend implementation</h3>
+			<div typeof="schema:description">
+				<p>
+					In the implementation of our application, we leveraged the robust capabilities of Spring Boot and
+					Java
+					to develop a seamless BackEnd architecture. Our choice of using Spring Boot allowed us to
+					efficiently
+					expose endpoints for smooth communication between the FrontEnd and BackEnd components.
+				</p>
+				<p>
+					For data storage, we opted for a DynamoDB table, a NoSQL database service, to streamline the
+					management
+					and retrieval of garden-related information. This decision aligns with our commitment to enhancing
+					the
+					overall user experience by ensuring quick and effective data storage and retrieval.
+				</p>
+				<p>
+					Adhering to Java conventions, we organized our codebase into well-structured packages, including
+					controller, service, model, and repository. Within each of these, we further implemented an abstract
+					class, fostering code reusability and minimizing redundancy. This abstraction approach involves
+					creating
+					a dedicated abstract class for controllers, services, repositories, and models, effectively
+					eliminating
+					duplicate code and promoting a cleaner, more maintainable codebase.
+				</p>
+				<p>
+					Moreover, to handle negative scenarios and enhance the robustness of our application, we implemented
+					custom exceptions. These exceptions address specific error scenarios and contribute to more
+					informative
+					error handling, providing a better experience for users and aiding in the troubleshooting process.
+				</p>
+				<p>
+					In summary, our BackEnd implementation revolves around the powerful combination of Spring Boot and
+					Java,
+					leveraging DynamoDB for efficient data management. The adherence to Java conventions, strategic
+					package
+					organization, and the implementation of abstract classes for each essential component showcase our
+					commitment to creating a scalable, maintainable, and robust application. Additionally, the
+					incorporation
+					of custom exceptions underscores our dedication to addressing and managing potential negative flows
+					within the system.
+				</p>
+			</div>
+		</section>
+		<section typeof="schema:CreativeWork" id="frontend-application">
+			<h3 typeof="schema:name">Details regarding the FrontEnd implementation</h3>
+			<div typeof="schema:description">
+				<p>
+					In crafting the FrontEnd of our application, we embraced the versatility of Flutter with Dart,
+					delivering an
+					intuitive and engaging user interface. The authentication system is seamlessly integrated using
+					Firebase,
+					providing users with a secure and streamlined login experience.
+				</p>
+				<p>
+					One of the unique features of our FrontEnd is the voice-based interaction with an AI specializing in
+					plant
+					knowledge.
+					Users can effortlessly communicate with the AI through voice commands, receiving responses both in
+					text
+					and
+					text-to-speech format. This functionality enhances user engagement and accessibility.
+				</p>
+				<p>
+					Furthermore, we implemented a dedicated page for SPARQL queries, allowing users to interact with the
+					application's underlying data using this powerful query language.
+					This feature empowers users to extract specific information based on their preferences.
+				</p>
+				<p>
+					Our FrontEnd design follows a user-friendly flow, starting with a homepage that showcases various
+					gardens.
+					Clicking on a garden redirects users to a detailed page containing comprehensive information about
+					the
+					garden, including a list of events.
+					Users can click on specific events to be redirected to the event's URL for further details.
+				</p>
+				<p>
+					Additionally, we incorporated an exhibition list, providing users with a curated collection of
+					exhibitions.
+					Clicking on an exhibition leads to a dedicated page with detailed information about the exhibition
+					and a
+					list of plants it contains.
+					Users can explore individual plants by clicking on them, revealing specific plant details.
+					Notably, users have the option to execute pre-made SPARQL queries related to the selected plant,
+					enhancing
+					their exploration experience.
+				</p>
+				<p>
+					In summary, our FrontEnd implementation revolves around Flutter with Dart, seamlessly integrating
+					Firebase
+					for authentication.
+					The user experience is enriched with voice-based interaction with an AI, dedicated pages for SPARQL
+					queries,
+					and a user-friendly flow that facilitates exploration of gardens, events, exhibitions, and plants.
+					This comprehensive design ensures a visually appealing and highly functional interface for our
+					users.
+				</p>
+			</div>
+		</section>
+		<section typeof="schema:CreativeWork" id="cloud-application">
+			<h3 typeof="schema:name">Details regarding the Cloud implementation</h3>
+			<div typeof="schema:description">
+				<p>TO DO</p>
+			</div>
+		</section>
 	</section>
-	<section typeof="schema:CreativeWork" id="frontend-application">
-		<h3 typeof="schema:name">Details regarding the FrontEnd implementation</h3>
-		<div typeof="schema:description">
-			<p>
-				In crafting the FrontEnd of our application, we embraced the versatility of Flutter with Dart,
-				delivering an
-				intuitive and engaging user interface. The authentication system is seamlessly integrated using
-				Firebase,
-				providing users with a secure and streamlined login experience.
-			</p>
-			<p>
-				One of the unique features of our FrontEnd is the voice-based interaction with an AI specializing in
+
+	<section typeof="schema:CreativeWork" id="user-guide">
+		<h2><span>9. </span>User Guide for BotaniqScape</h2>
+		<p>Welcome to BotaniqScape, the comprehensive app for exploring gardens, exhibitions, and plant-related
+			information.
+			This guide will help you navigate the app with ease, whether you're a new user or just looking for more
+			information.
+		</p>
+
+		<h3>Getting Started</h3>
+
+		<h4>Installation and Access</h4>
+		<ul>
+			<li><strong>Mobile Version</strong>: Download the app from your device's app store.</li>
+			<li><strong>Web Version</strong>: Access the app through its website.</li>
+		</ul>
+
+		<h4>Home Page</h4>
+		<p>Upon entering the app, you are presented with two main options:</p>
+		<ol>
+			<li><strong>Visit Us Button</strong>: Click this to visit the app's GitHub repository.</li>
+			<li><strong>Auth Page</strong>: Navigate here to create an account or log in.</li>
+		</ol>
+
+		<h4>Authentication Page</h4>
+		<ul>
+			<li><strong>Create an Account</strong>: If you're a new user, sign up by providing the necessary details.
+			</li>
+			<li><strong>Log In</strong>: Existing users can log in using their credentials.</li>
+		</ul>
+
+		<h3>Main Features</h3>
+
+		<h4>Browsing Gardens</h4>
+		<p>On the main page, you can explore various gardens. Click on a garden to see its events, exhibitions, and
+			detailed
+			information.</p>
+
+		<h4>Events and Exhibitions</h4>
+		<p><strong>Events</strong>: Clicking on an event redirects you to its social media page for more details.</p>
+		<p><strong>Exhibitions</strong>: Select an exhibition to view its page within the app, where you can:</p>
+		<ul>
+			<li>Read about the exhibition.</li>
+			<li>See all plants featured in it.</li>
+			<li>Click on a plant to learn more about it.</li>
+		</ul>
+
+		<h4>Burger Menu</h4>
+		<ul>
+			<li>Access your personal information via the burger menu.</li>
+			<li><strong>AI Voice Assistant</strong>: Interact with the app using voice commands through this feature.
+			</li>
+			<li><strong>SPARQL Page</strong>: Here, you can:</li>
+			<ul>
+				<li>Execute one of three pre-made queries about plants.</li>
+				<li>Create and run your own queries to retrieve plant information.</li>
+			</ul>
+		</ul>
+
+		<h3>Learning More about Plants</h3>
+		<ul>
+			<li><strong>From Exhibition to Plant Details</strong>: While exploring an exhibition, you can click on any
 				plant
-				knowledge.
-				Users can effortlessly communicate with the AI through voice commands, receiving responses both in text
-				and
-				text-to-speech format. This functionality enhances user engagement and accessibility.
-			</p>
-			<p>
-				Furthermore, we implemented a dedicated page for SPARQL queries, allowing users to interact with the
-				application's underlying data using this powerful query language.
-				This feature empowers users to extract specific information based on their preferences.
-			</p>
-			<p>
-				Our FrontEnd design follows a user-friendly flow, starting with a homepage that showcases various
-				gardens.
-				Clicking on a garden redirects users to a detailed page containing comprehensive information about the
-				garden, including a list of events.
-				Users can click on specific events to be redirected to the event's URL for further details.
-			</p>
-			<p>
-				Additionally, we incorporated an exhibition list, providing users with a curated collection of
-				exhibitions.
-				Clicking on an exhibition leads to a dedicated page with detailed information about the exhibition and a
-				list of plants it contains.
-				Users can explore individual plants by clicking on them, revealing specific plant details.
-				Notably, users have the option to execute pre-made SPARQL queries related to the selected plant,
-				enhancing
-				their exploration experience.
-			</p>
-			<p>
-				In summary, our FrontEnd implementation revolves around Flutter with Dart, seamlessly integrating
-				Firebase
-				for authentication.
-				The user experience is enriched with voice-based interaction with an AI, dedicated pages for SPARQL
-				queries,
-				and a user-friendly flow that facilitates exploration of gardens, events, exhibitions, and plants.
-				This comprehensive design ensures a visually appealing and highly functional interface for our users.
-			</p>
-		</div>
+				to
+				navigate to its specific page.</li>
+			<li><strong>Detailed Plant Information</strong>: On the plant's page, select “Learn More” to perform a
+				SPARQL
+				query.
+				This action gathers all available data about the selected plant, offering in-depth information.</li>
+		</ul>
+
+		<h3>Tips for a Better Experience</h3>
+		<ul>
+			<li><strong>Regular Updates</strong>: Keep the app updated for the latest features and improvements.</li>
+			<li><strong>Feedback</strong>: Use the 'Visit Us' feature for any queries or feedback.</li>
+		</ul>
+
+		<h3>Troubleshooting</h3>
+		<p>If you encounter any issues, refer to the 'Visit Us' section in the app or contact customer support.</p>
+
+		<p>Thank you for choosing BotaniqScape. We hope you enjoy exploring the world of gardens and plants with us!</p>
+
 	</section>
-	<section typeof="schema:CreativeWork" id="cloud-application">
-		<h3 typeof="schema:name">Details regarding the Cloud implementation</h3>
+
+
+	<section typeof="schema:CreativeWork" id="authors">
+		<h2 typeof="schema:name"><span>10. </span>Authors</h2>
+
+		<section typeof="schema:Person" id="author-1">
+			<div style="display: flex; align-items: center">
+				<h3 typeof="schema:name" style="margin-right: 10px">Alex Amarandei</h3>
+				<img src="images/circle-image-alex.jpeg" alt="Alex Amarandei"
+					style="width: 100px; height: 100px; border-radius: 50%" />
+			</div>
+			<br />
+			<section typeof="schema:description">
+				<q>I am keen on lifelong learning and I try to expand my field of knowledge with every occasion. I am a
+					hard
+					worker and a
+					proficient Team Player ready to tackle any kind of interesting challenges!</q>
+			</section>
+
+			<section typeof="schema:socialMedia">
+				<p>
+					<strong>Socials:</strong>
+					<a href="https://github.com/Alex-Amarandei" property="schema:sameAs">GitHub</a>,
+					<a href="https://linkedin.com/in/alex-amarandei" property="schema:sameAs">LinkedIn</a>
+				</p>
+			</section>
+		</section>
+
+		<section typeof="schema:Person" id="author-2">
+			<div style="display: flex; align-items: center">
+				<h3 typeof="schema:name" style="margin-right: 10px">Andrei Zaharia</h3>
+				<img src="images/circle-image-andrei.jpeg" alt="Andrei Zaharia"
+					style="width: 100px; height: 100px; border-radius: 50%" />
+			</div>
+			<br />
+			<section typeof="schema:description">
+				<q>Devoted software engineer with a passion for problem-solving. Coding enthusiast, always up for a
+					coding
+					challenge, and
+					forever curious about the next big thing in tech.</q>
+			</section>
+
+			<section typeof="schema:socialMedia">
+				<p>
+					<strong>Socials:</strong>
+					<a href="https://github.com/Naclyy" property="schema:sameAs">GitHub</a>,
+					<a href="https://www.linkedin.com/in/andrei-zaharia-a34aa217a/"
+						property="schema:sameAs">LinkedIn</a>
+				</p>
+			</section>
+		</section>
+	</section>
+
+	<section typeof="schema:CreativeWork" id="acks">
+		<h2 typeof="schema:name"><span>11. </span>Acknowledgements</h2>
 		<div typeof="schema:description">
-			<p>TO DO</p>
-		</div>
-	</section>
-</section>
-
-<section typeof="schema:CreativeWork" id="user-guide">
-	<h2><span>9. </span>User Guide for BotaniqScape</h2>
-	<p>Welcome to BotaniqScape, the comprehensive app for exploring gardens, exhibitions, and plant-related information.
-		This guide will help you navigate the app with ease, whether you're a new user or just looking for more
-		information.
-	</p>
-
-	<h3>Getting Started</h3>
-
-	<h4>Installation and Access</h4>
-	<ul>
-		<li><strong>Mobile Version</strong>: Download the app from your device's app store.</li>
-		<li><strong>Web Version</strong>: Access the app through its website.</li>
-	</ul>
-
-	<h4>Home Page</h4>
-	<p>Upon entering the app, you are presented with two main options:</p>
-	<ol>
-		<li><strong>Visit Us Button</strong>: Click this to visit the app's GitHub repository.</li>
-		<li><strong>Auth Page</strong>: Navigate here to create an account or log in.</li>
-	</ol>
-
-	<h4>Authentication Page</h4>
-	<ul>
-		<li><strong>Create an Account</strong>: If you're a new user, sign up by providing the necessary details.</li>
-		<li><strong>Log In</strong>: Existing users can log in using their credentials.</li>
-	</ul>
-
-	<h3>Main Features</h3>
-
-	<h4>Browsing Gardens</h4>
-	<p>On the main page, you can explore various gardens. Click on a garden to see its events, exhibitions, and detailed
-		information.</p>
-
-	<h4>Events and Exhibitions</h4>
-	<p><strong>Events</strong>: Clicking on an event redirects you to its social media page for more details.</p>
-	<p><strong>Exhibitions</strong>: Select an exhibition to view its page within the app, where you can:</p>
-	<ul>
-		<li>Read about the exhibition.</li>
-		<li>See all plants featured in it.</li>
-		<li>Click on a plant to learn more about it.</li>
-	</ul>
-
-	<h4>Burger Menu</h4>
-	<ul>
-		<li>Access your personal information via the burger menu.</li>
-		<li><strong>AI Voice Assistant</strong>: Interact with the app using voice commands through this feature.</li>
-		<li><strong>SPARQL Page</strong>: Here, you can:</li>
-		<ul>
-			<li>Execute one of three pre-made queries about plants.</li>
-			<li>Create and run your own queries to retrieve plant information.</li>
-		</ul>
-	</ul>
-
-	<h3>Learning More about Plants</h3>
-	<ul>
-		<li><strong>From Exhibition to Plant Details</strong>: While exploring an exhibition, you can click on any plant
-			to
-			navigate to its specific page.</li>
-		<li><strong>Detailed Plant Information</strong>: On the plant's page, select “Learn More” to perform a SPARQL
-			query.
-			This action gathers all available data about the selected plant, offering in-depth information.</li>
-	</ul>
-
-	<h3>Tips for a Better Experience</h3>
-	<ul>
-		<li><strong>Regular Updates</strong>: Keep the app updated for the latest features and improvements.</li>
-		<li><strong>Feedback</strong>: Use the 'Visit Us' feature for any queries or feedback.</li>
-	</ul>
-
-	<h3>Troubleshooting</h3>
-	<p>If you encounter any issues, refer to the 'Visit Us' section in the app or contact customer support.</p>
-
-	<p>Thank you for choosing BotaniqScape. We hope you enjoy exploring the world of gardens and plants with us!</p>
-
-</section>
-
-
-<section typeof="schema:CreativeWork" id="authors">
-	<h2 typeof="schema:name"><span>10. </span>Authors</h2>
-
-	<section typeof="schema:Person" id="author-1">
-		<div style="display: flex; align-items: center">
-			<h3 typeof="schema:name" style="margin-right: 10px">Alex Amarandei</h3>
-			<img src="images/circle-image-alex.jpeg" alt="Alex Amarandei"
-				style="width: 100px; height: 100px; border-radius: 50%" />
-		</div>
-		<br />
-		<section typeof="schema:description">
-			<q>I am keen on lifelong learning and I try to expand my field of knowledge with every occasion. I am a hard
-				worker and a
-				proficient Team Player ready to tackle any kind of interesting challenges!</q>
-		</section>
-
-		<section typeof="schema:socialMedia">
 			<p>
-				<strong>Socials:</strong>
-				<a href="https://github.com/Alex-Amarandei" property="schema:sameAs">GitHub</a>,
-				<a href="https://linkedin.com/in/alex-amarandei" property="schema:sameAs">LinkedIn</a>
+				We extend our heartfelt gratitude to
+				<a href="https://profs.info.uaic.ro/~busaco/profile.html" typeof="schema:Person" id="instructor">our
+					instructor</a> whose
+				expertise illuminated our path during the master's degree
+				<a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/">Web Application Development Course</a>.
 			</p>
-		</section>
-	</section>
-
-	<section typeof="schema:Person" id="author-2">
-		<div style="display: flex; align-items: center">
-			<h3 typeof="schema:name" style="margin-right: 10px">Andrei Zaharia</h3>
-			<img src="images/circle-image-andrei.jpeg" alt="Andrei Zaharia"
-				style="width: 100px; height: 100px; border-radius: 50%" />
-		</div>
-		<br />
-		<section typeof="schema:description">
-			<q>Devoted software engineer with a passion for problem-solving. Coding enthusiast, always up for a coding
-				challenge, and
-				forever curious about the next big thing in tech.</q>
-		</section>
-
-		<section typeof="schema:socialMedia">
+			<p>Special thanks to our fellow students for their collaborative spirit and innovative ideas that shaped
+				BotaniqScape.</p>
 			<p>
-				<strong>Socials:</strong>
-				<a href="https://github.com/Naclyy" property="schema:sameAs">GitHub</a>,
-				<a href="https://www.linkedin.com/in/andrei-zaharia-a34aa217a/" property="schema:sameAs">LinkedIn</a>
+				Our families and friends provided unwavering support, and to the lines of code and bugs conquered - you
+				are
+				the unsung
+				heroes.
 			</p>
-		</section>
+			<p>
+				<strong>BotaniqScape</strong> is a testament to collective effort, passion, and resilience, reflecting
+				our
+				shared journey in
+				the world of software engineering.
+			</p>
+		</div>
 	</section>
-</section>
 
-<section typeof="schema:CreativeWork" id="acks">
-	<h2 typeof="schema:name"><span>11. </span>Acknowledgements</h2>
-	<div typeof="schema:description">
-		<p>
-			We extend our heartfelt gratitude to
-			<a href="https://profs.info.uaic.ro/~busaco/profile.html" typeof="schema:Person" id="instructor">our
-				instructor</a> whose
-			expertise illuminated our path during the master's degree
-			<a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/">Web Application Development Course</a>.
-		</p>
-		<p>Special thanks to our fellow students for their collaborative spirit and innovative ideas that shaped
-			BotaniqScape.</p>
-		<p>
-			Our families and friends provided unwavering support, and to the lines of code and bugs conquered - you are
-			the unsung
-			heroes.
-		</p>
-		<p>
-			<strong>BotaniqScape</strong> is a testament to collective effort, passion, and resilience, reflecting our
-			shared journey in
-			the world of software engineering.
-		</p>
-	</div>
-</section>
-
-<section typeof="schema:documentation" id="biblio-references">
-	<h2 typeof="schema:name"><span>12. </span>References</h2>
-	<div typeof="schema:description">
-		<ul>
-			<li><a href="https://www.scholarlyhtml.org/">Scholarly HTML</a></li>
-			<li><a href="https://www.w3.org/RDF/">RDF - Resource Description Framework</a></li>
-			<li><a href="https://www.w3.org/RDFa/">RDFa - RDF in Attributes</a></li>
-			<li><a href="https://schema.org/">Schema.org</a></li>
-			<li><a href="https://www.openapis.org/">OpenAPI Specification</a></li>
-			<li><a href="https://www.wikidata.org/">Wikidata</a></li>
-			<li><a href="https://wiki.dbpedia.org/">DBpedia</a></li>
-			<li><a href="https://garden.org/">Garden.org</a></li>
-			<li><a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/index.html">Web Application Development
-					and Engineering Course</a></li>
-		</ul>
-	</div>
-</section>
+	<section typeof="schema:documentation" id="biblio-references">
+		<h2 typeof="schema:name"><span>12. </span>References</h2>
+		<div typeof="schema:description">
+			<ul>
+				<li><a href="https://www.scholarlyhtml.org/">Scholarly HTML</a></li>
+				<li><a href="https://www.w3.org/RDF/">RDF - Resource Description Framework</a></li>
+				<li><a href="https://www.w3.org/RDFa/">RDFa - RDF in Attributes</a></li>
+				<li><a href="https://schema.org/">Schema.org</a></li>
+				<li><a href="https://www.openapis.org/">OpenAPI Specification</a></li>
+				<li><a href="https://www.wikidata.org/">Wikidata</a></li>
+				<li><a href="https://wiki.dbpedia.org/">DBpedia</a></li>
+				<li><a href="https://garden.org/">Garden.org</a></li>
+				<li><a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/index.html">Web Application
+						Development
+						and Engineering Course</a></li>
+			</ul>
+		</div>
+	</section>
 
 
-<section typeof="schema:license" id="license">
-	<h2 typeof="schema:name"><span>13. </span>License</h2>
-	<div typeof="schema:description">
-		<p>
-			<a href="https://opensource.org/license/mit/">The MIT License</a>
-		</p>
-	</div>
-</section>
+	<section typeof="schema:license" id="license">
+		<h2 typeof="schema:name"><span>13. </span>License</h2>
+		<div typeof="schema:description">
+			<p>
+				<a href="https://opensource.org/license/mit/">The MIT License</a>
+			</p>
+		</div>
+	</section>
 
 </html>
