@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "482004477751",
+    "project_id": "botaniqscape-18f97",
+    "storage_bucket": "botaniqscape-18f97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482004477751:android:ba82b2b6c5b2fd8009dcb2",
+        "android_client_info": {
+          "package_name": "fii.wade.botaniq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoTkpj_wT4nifnBlmrcUg68jJqrq6sr6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
