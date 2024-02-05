@@ -3,10 +3,6 @@
   <img src="assets/logo.png" alt="logo" width="200" height="auto" />
   <h1>WADE-Botanical-Gardens-Smart-Explorer</h1>
   
-  <p>
-    An awesome README template for your projects! 
-  </p>
-  
 <p>
   <a href="https://github.com/Alex-Amarandei/WADE-Botanical-Gardens-Smart-Explorer/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/Alex-Amarandei/WADE-Botanical-Gardens-Smart-Explorer" alt="contributors" />
@@ -44,7 +40,7 @@
 # :notebook_with_decorative_cover: Table of Contents
 
 -   [About the Project](#star2-about-the-project)
-    -   [Screenshots](#camera-screenshots)
+    -   [Diagrams](#camera-diagrams)
     -   [Tech Stack](#space_invader-tech-stack)
     -   [Features](#dart-features)
 -   [Getting Started](#toolbox-getting-started)
@@ -73,11 +69,13 @@
 <div align="center"> 
   <img src="assets/diagrams/BOGX_C1.jpg" alt="C1 Diagram" />
   <img src="assets/diagrams/BOGX_C2.jpg" alt="C2 Diagram" />
+  <img src="docs/src/images/BotaniqScape.jpeg" alt="Cloud Infrastructure" />
+  <img src="docs/src/images/statechart.png" alt="Statechart" />
 </div>
 
 ### :camera: OpenAPI Specification
 
-You can find our [OpenAPI]() specification here.
+You can find our OpenAPI specification here.
 
 #### Instructions
 
