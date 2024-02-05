@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:plant="http://example.org/plant/">
+
+    <rdf:Description rdf:about="http://example.org/plant/Americanlicorice">
+        <plant:name>American licorice</plant:name>
+        <plant:photoUrl>https://www.naturalistperspective.com/wp-content/uploads/2021/09/wild-licorice-green-burrs.jpg</plant:photoUrl>
+        <plant:description>American licorice, scientifically known as Glycyrrhiza lepidota, is a herbaceous perennial native to North America, recognized for its sweet-tasting root.</plant:description>
+        <plant:plantHabit>Herbaceous</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Well-drained</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/82295/American-Licorice-Glycyrrhiza-lepidota/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Aerideslawrenceae">
+        <plant:name>Aerides lawrenceae</plant:name>
+        <plant:photoUrl>https://orchidable.ch/wp-content/uploads/2023/06/Aerides-lawrenceae.jpeg</plant:photoUrl>
+        <plant:description>Aerides lawrenceae is an epiphytic orchid species, admired for its fragrant, waxy flowers. It thrives in humid, tropical environments.</plant:description>
+        <plant:plantHabit>Epiphyte</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Well-draining</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/434285/Orchid-Aerides-lawrenceae/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Charpentieraovatavar.niuensis">
+        <plant:name>Charpentiera ovata var. niuensis</plant:name>
+        <plant:photoUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Charpentiera_ovata_var._ovata_%285516731426%29.jpg/800px-Charpentiera_ovata_var._ovata_%285516731426%29.jpg</plant:photoUrl>
+        <plant:description>A rare variety of Charpentiera ovata, found in Hawaii. It's known for its broad ovate leaves and small clustered flowers.</plant:description>
+        <plant:plantHabit>Shrub</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Moist</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/search/text/?q=Charpentiera+ovata</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Crinumamericanum">
+        <plant:name>Crinum americanum</plant:name>
+        <plant:photoUrl>https://upload.wikimedia.org/wikipedia/commons/0/0f/Crinum_americanum1LEPPYONE.jpg</plant:photoUrl>
+        <plant:description>Also known as the American swamp lily, this plant is a perennial bulb known for its fragrant white flowers and preference for wetland areas.</plant:description>
+        <plant:plantHabit>Bulb</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Wet</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/81280/Crinum-Lily-Crinum-americanum/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Sesuviumportulacastrum">
+        <plant:name>Sesuvium portulacastrum</plant:name>
+        <plant:photoUrl>https://www.flawildflowers.org/wp-content/uploads/2015/12/sesuvium_portulacastrum_kag1965_CCBY-NC.jpg</plant:photoUrl>
+        <plant:description>Commonly known as shoreline purslane or sea purslane, this creeping plant is often found in coastal areas and is known for its succulent leaves and pink flowers.</plant:description>
+        <plant:plantHabit>Creeping</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Sandy</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/85179/Sea-Purslane-Sesuvium-portulacastrum/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Actaeapachypoda">
+        <plant:name>Actaea pachypoda</plant:name>
+        <plant:photoUrl>https://www.shutterstock.com/image-photo/white-baneberry-actaea-pachypoda-bears-600nw-2061652808.jpg</plant:photoUrl>
+        <plant:description>Known as white baneberry or doll's eyes, this North American native plant is recognized for its distinctive white berries with a dark spot, resembling eyes.</plant:description>
+        <plant:plantHabit>Herbaceous</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Moist</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/75115/Dolls-Eyes-Actaea-pachypoda/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Abeliamosanensis">
+        <plant:name>Abelia mosanensis</plant:name>
+        <plant:photoUrl>https://xeraplants.com/wp-content/uploads/2021/01/Image-1-6-21-at-6.59-AM.jpeg</plant:photoUrl>
+        <plant:description>A fragrant abelia, Abelia mosanensis is a deciduous shrub with pink flowering buds that open to white, trumpet-shaped flowers.</plant:description>
+        <plant:plantHabit>Shrub</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Well-drained</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/128013/Fragrant-Abelia-Zabelia-tyaihyoni/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Osmanthusdelavayi">
+        <plant:name>Osmanthus delavayi</plant:name>
+        <plant:photoUrl>https://static.ashwoodnurseries.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/s/osmanthus_delavyi_resized.jpg</plant:photoUrl>
+        <plant:description>This evergreen shrub, known for its small, fragrant white flowers and glossy leaves, is often used in hedges and as an ornamental plant.</plant:description>
+        <plant:plantHabit>Shrub</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Well-drained</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/130143/Delavay-Tea-Olive-Osmanthus-delavayi/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Coprosmarhynchocarpa">
+        <plant:name>Coprosma rhynchocarpa</plant:name>
+        <plant:photoUrl>https://live.staticflickr.com/2861/34146264675_1985968d0f_b.jpg</plant:photoUrl>
+        <plant:description>A New Zealand native, this Coprosma species is a small shrub known for its glossy leaves and orange-red fruits.</plant:description>
+        <plant:plantHabit>Shrub</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Well-drained soil</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/201894/Woodland-Mirrorplant-Coprosma-rhynchocarpa/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Bistortabistortoides">
+        <plant:name>Bistorta bistortoides</plant:name>
+        <plant:photoUrl>https://burkeherbarium.org/imagecollection/wtu44000/md/wtu044467.jpg</plant:photoUrl>
+        <plant:description>Also known as American bistort or western bistort, this perennial herb is known for its dense clusters of small white or pink flowers.</plant:description>
+        <plant:plantHabit>Herbaceous</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Moist</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/84313/Western-Bistort-Bistorta-bistortoides/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Santalumfreycinetianum">
+        <plant:name>Santalum freycinetianum</plant:name>
+        <plant:photoUrl>https://live.staticflickr.com/4128/5210117536_cdaa997870_c.jpg</plant:photoUrl>
+        <plant:description>Known as Freycinet sandalwood, this small tree is endemic to Hawaii, valued for its fragrant wood and part of important cultural and ecological systems.</plant:description>
+        <plant:plantHabit>Tree</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Dry</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/204157/Forest-Sandalwood-Santalum-freycinetianum/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Tetramolopiumfiliforme">
+        <plant:name>Tetramolopium filiforme</plant:name>
+        <plant:photoUrl>https://live.staticflickr.com/4132/5187957281_7bf912fefd_c.jpg</plant:photoUrl>
+        <plant:description>An endemic Hawaiian plant, Tetramolopium filiforme is a small shrub known for its daisy-like yellow flowers and adaptability to various soil types.</plant:description>
+        <plant:plantHabit>Shrub</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Adaptable</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/202593/Tetramolopium-filiforme/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/plant/Ipomoeaimperati">
+        <plant:name>Ipomoea imperati</plant:name>
+        <plant:photoUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Starr_010309-0539_Ipomoea_imperati.jpg/1200px-Starr_010309-0539_Ipomoea_imperati.jpg</plant:photoUrl>
+        <plant:description>Also known as beach morning glory, Ipomoea imperati is a fast-growing vine with white to pale purple flowers, often found in sandy coastal areas.</plant:description>
+        <plant:plantHabit>Vine</plant:plantHabit>
+        <plant:lifeCycle>Perennial</plant:lifeCycle>
+        <plant:soilPreferences>Sandy</plant:soilPreferences>
+        <plant:gardenOrgUrl>https://garden.org/plants/view/82639/Beach-Morning-Glory-Ipomoea-imperati/</plant:gardenOrgUrl>
+    </rdf:Description>
+
+</rdf:RDF>
