@@ -1,135 +1,366 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:plant="http://example.org/plant/">
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ex="http://botaniq.org/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
 
-    <rdf:Description rdf:about="http://example.org/plant/Americanlicorice">
-        <plant:name>American licorice</plant:name>
-        <plant:photoUrl>https://www.naturalistperspective.com/wp-content/uploads/2021/09/wild-licorice-green-burrs.jpg</plant:photoUrl>
-        <plant:description>American licorice, scientifically known as Glycyrrhiza lepidota, is a herbaceous perennial native to North America, recognized for its sweet-tasting root.</plant:description>
-        <plant:plantHabit>Herbaceous</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Well-drained</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/82295/American-Licorice-Glycyrrhiza-lepidota/</plant:gardenOrgUrl>
+    <!-- Botanical Garden: Kew Gardens -->
+    <rdf:Description rdf:about="http://botaniq.org/gardens/KewGardens">
+        <dc:title>Kew Gardens</dc:title>
+        <ex:description>Explore the beauty of Kew Gardens, a world-renowned botanical paradise...</ex:description>
+        <ex:price>Varies</ex:price>
+        <ex:rating>4.5</ex:rating>
+        <ex:photoUrl>https://www.esmadrid.com/sites/default/files/styles/content_type_full/public/recursosturisticos/infoturistica/jardin_botanico_alvaro_lopez_del_cerro_c_madrid_destino.jpg</ex:photoUrl>
+        <ex:location rdf:resource="http://botaniq.org/locations/KewGardensLocation"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/EnchantedGardenSoiree"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/SunsetSerenityGala"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/FloralSymphonyShowcase"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/SummerOasisExtravaganza"/>
+        <ex:isLocatedIn rdf:resource="http://botaniq.org/locations/KewGardensLocation"/>
+        <ex:featuresInSeason rdf:resource="http://botaniq.org/seasons/Spring"/>
+    </rdf:Description>
+    <!-- Location of Kew Gardens -->
+    <rdf:Description rdf:about="http://botaniq.org/locations/KewGardensLocation">
+        <ex:city>Iasi</ex:city>
+        <ex:county>Iasi</ex:county>
+        <ex:country>Romania</ex:country>
+        <ex:streetName>Copou</ex:streetName>
+        <ex:postalCode>700143</ex:postalCode>
+        <ex:googleMapsLink>https://www.google.com/maps/place/Alexandru+Ioan+Cuza+University/@47.1634328,27.5628619,13z/data=!4m6!3m5!1s0x40cafb61af5ef507:0x95f1e37c73c23e74!8m2!3d47.1743589!4d27.571504!16zL20vMDk0NXEw?entry=ttu</ex:googleMapsLink>
+    </rdf:Description>
+    <!-- Events at Kew Gardens -->
+    <!-- Enchanted Garden Soiree -->
+    <rdf:Description rdf:about="http://botaniq.org/events/EnchantedGardenSoiree">
+        <dc:title>Enchanted Garden Soiree</dc:title>
+        <ex:date>05.15.2024</ex:date>
+        <ex:description>Step into a world of enchantment at the Enchanted Garden Soiree on May 15, 2024...</ex:description>
+        <ex:photoUrl>https://www.servuscluj.ro/wp-content/uploads/2022/05/gradina-botanica.jpg</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/KewGardens"/>
+    </rdf:Description>
+    <!-- Sunset Serenity Gala -->
+    <rdf:Description rdf:about="http://botaniq.org/events/SunsetSerenityGala">
+        <dc:title>Sunset Serenity Gala</dc:title>
+        <ex:date>08.28.2024</ex:date>
+        <ex:description>Experience an evening of serenity and sophistication at the Sunset Serenity Gala on August 28, 2024...</ex:description>
+        <ex:photoUrl>https://www.zcj.ro/images/db/1_3_232089_1651477155_02864_fav.jpg</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/KewGardens"/>
+    </rdf:Description>
+    <!-- Exhibitions at Kew Gardens -->
+    <!-- Floral Symphony Showcase -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/FloralSymphonyShowcase">
+        <dc:title>Floral Symphony Showcase</dc:title>
+        <ex:season>spring</ex:season>
+        <ex:description>Embark on a breathtaking journey through the enchanting Floral Symphony Showcase this spring...</ex:description>
+        <ex:photoUrl>https://botanica.uaic.ro/images/crizanteme2019/pic2e.jpg</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/AmericanLicorice"/>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/KewGardens"/>
+    </rdf:Description>
+    <!-- Summer Oasis Extravaganza -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/SummerOasisExtravaganza">
+        <dc:title>Summer Oasis Extravaganza</dc:title>
+        <ex:season>summer</ex:season>
+        <ex:description>Escape to the Summer Oasis Extravaganza, a spectacular exhibition that transforms the botanical gardens...</ex:description>
+        <ex:photoUrl>https://www.radiovacanta.ro/wp-content/uploads/2023/10/gradina-botanica-iasi.jpg</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/CoprosmaRhynchocarpa"/>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/KewGardens"/>
+    </rdf:Description>
+    <!-- Plants in the Exhibitions -->
+    <!-- American Licorice -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/AmericanLicorice">
+        <dc:title>American licorice</dc:title>
+        <ex:description>American licorice, scientifically known as Glycyrrhiza lepidota...</ex:description>
+        <ex:plantHabit>Herbaceous</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained</ex:soilPreferences>
+        <ex:photoUrl>https://www.naturalistperspective.com/wp-content/uploads/2021/09/wild-licorice-green-burrs.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/82295/American-Licorice-Glycyrrhiza-lepidota/</ex:gardenOrgUrl>
+        <ex:partOfExhibition rdf:resource="http://botaniq.org/exhibitions/FloralSymphonyShowcase"/>
+    </rdf:Description>
+    <!-- Coprosma Rhynchocarpa -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/CoprosmaRhynchocarpa">
+        <dc:title>Coprosma rhynchocarpa</dc:title>
+        <ex:description>A New Zealand native, this Coprosma species is a small shrub known for its glossy leaves and orange-red fruits...</ex:description>
+        <ex:plantHabit>Shrub</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained soil</ex:soilPreferences>
+        <ex:photoUrl>https://live.staticflickr.com/2861/34146264675_1985968d0f_b.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/201894/Woodland-Mirrorplant-Coprosma-rhynchocarpa/</ex:gardenOrgUrl>
+        <ex:partOfExhibition rdf:resource="http://botaniq.org/exhibitions/FloralSymphonyShowcase"/>
+    </rdf:Description>
+        <!-- Botanical Garden: Royal Botanic Garden Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh">
+        <dc:title>Royal Botanic Garden Edinburgh</dc:title>
+        <ex:description>Experience the Royal Botanic Garden Edinburgh, a horticultural gem nestled in the capital of Scotland...</ex:description>
+        <ex:price>Varies</ex:price>
+        <ex:rating>4.4</ex:rating>
+        <ex:photoUrl>https://a.cdn-hotels.com/gdcs/production28/d155/583bb055-6825-4b54-b0d3-093498e8f049.jpg</ex:photoUrl>
+        <ex:location rdf:resource="http://botaniq.org/locations/RoyalBotanicGardenEdinburghLocation"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/EnchantedGardenSoireeEdinburgh"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/SunsetSerenityGalaEdinburgh"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/FloralSymphonyShowcaseEdinburgh"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/SummerOasisExtravaganzaEdinburgh"/>
+        <ex:isLocatedIn rdf:resource="http://botaniq.org/locations/RoyalBotanicGardenEdinburghLocation"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Aerideslawrenceae">
-        <plant:name>Aerides lawrenceae</plant:name>
-        <plant:photoUrl>https://orchidable.ch/wp-content/uploads/2023/06/Aerides-lawrenceae.jpeg</plant:photoUrl>
-        <plant:description>Aerides lawrenceae is an epiphytic orchid species, admired for its fragrant, waxy flowers. It thrives in humid, tropical environments.</plant:description>
-        <plant:plantHabit>Epiphyte</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Well-draining</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/434285/Orchid-Aerides-lawrenceae/</plant:gardenOrgUrl>
+    <!-- Location of Royal Botanic Garden Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/locations/RoyalBotanicGardenEdinburghLocation">
+        <ex:city>Iasi</ex:city>
+        <ex:county>Iasi</ex:county>
+        <ex:country>Romania</ex:country>
+        <ex:streetName>Copou</ex:streetName>
+        <ex:postalCode>700143</ex:postalCode>
+        <ex:googleMapsLink>https://www.google.com/maps/place/Alexandru+Ioan+Cuza+University/@47.1634328,27.5628619,13z/data=!4m6!3m5!1s0x40cafb61af5ef507:0x95f1e37c73c23e74!8m2!3d47.1743589!4d27.571504!16zL20vMDk0NXEw?entry=ttu</ex:googleMapsLink>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Charpentieraovatavar.niuensis">
-        <plant:name>Charpentiera ovata var. niuensis</plant:name>
-        <plant:photoUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Charpentiera_ovata_var._ovata_%285516731426%29.jpg/800px-Charpentiera_ovata_var._ovata_%285516731426%29.jpg</plant:photoUrl>
-        <plant:description>A rare variety of Charpentiera ovata, found in Hawaii. It's known for its broad ovate leaves and small clustered flowers.</plant:description>
-        <plant:plantHabit>Shrub</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Moist</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/search/text/?q=Charpentiera+ovata</plant:gardenOrgUrl>
+    <!-- Events at Royal Botanic Garden Edinburgh -->
+    <!-- Enchanted Garden Soiree Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/events/EnchantedGardenSoireeEdinburgh">
+        <dc:title>Enchanted Garden Soiree</dc:title>
+        <ex:date>05.15.2024</ex:date>
+        <ex:description>Step into a world of enchantment at the Enchanted Garden Soiree on May 15, 2024...</ex:description>
+        <ex:photoUrl>https://www.servuscluj.ro/wp-content/uploads/2022/05/gradina-botanica.jpg</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Crinumamericanum">
-        <plant:name>Crinum americanum</plant:name>
-        <plant:photoUrl>https://upload.wikimedia.org/wikipedia/commons/0/0f/Crinum_americanum1LEPPYONE.jpg</plant:photoUrl>
-        <plant:description>Also known as the American swamp lily, this plant is a perennial bulb known for its fragrant white flowers and preference for wetland areas.</plant:description>
-        <plant:plantHabit>Bulb</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Wet</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/81280/Crinum-Lily-Crinum-americanum/</plant:gardenOrgUrl>
+    <!-- Sunset Serenity Gala Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/events/SunsetSerenityGalaEdinburgh">
+        <dc:title>Sunset Serenity Gala</dc:title>
+        <ex:date>08.28.2024</ex:date>
+        <ex:description>Experience an evening of serenity and sophistication at the Sunset Serenity Gala on August 28, 2024...</ex:description>
+        <ex:photoUrl>https://www.zcj.ro/images/db/1_3_232089_1651477155_02864_fav.jpg</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Sesuviumportulacastrum">
-        <plant:name>Sesuvium portulacastrum</plant:name>
-        <plant:photoUrl>https://www.flawildflowers.org/wp-content/uploads/2015/12/sesuvium_portulacastrum_kag1965_CCBY-NC.jpg</plant:photoUrl>
-        <plant:description>Commonly known as shoreline purslane or sea purslane, this creeping plant is often found in coastal areas and is known for its succulent leaves and pink flowers.</plant:description>
-        <plant:plantHabit>Creeping</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Sandy</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/85179/Sea-Purslane-Sesuvium-portulacastrum/</plant:gardenOrgUrl>
+    <!-- Exhibitions at Royal Botanic Garden Edinburgh -->
+    <!-- Floral Symphony Showcase Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/FloralSymphonyShowcaseEdinburgh">
+        <dc:title>Floral Symphony Showcase</dc:title>
+        <ex:season>spring</ex:season>
+        <ex:description>Embark on a breathtaking journey through the enchanting Floral Symphony Showcase this spring...</ex:description>
+        <ex:photoUrl>https://botanica.uaic.ro/images/crizanteme2019/pic2e.jpg</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/AmericanLicoriceEdinburgh"/>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Actaeapachypoda">
-        <plant:name>Actaea pachypoda</plant:name>
-        <plant:photoUrl>https://www.shutterstock.com/image-photo/white-baneberry-actaea-pachypoda-bears-600nw-2061652808.jpg</plant:photoUrl>
-        <plant:description>Known as white baneberry or doll's eyes, this North American native plant is recognized for its distinctive white berries with a dark spot, resembling eyes.</plant:description>
-        <plant:plantHabit>Herbaceous</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Moist</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/75115/Dolls-Eyes-Actaea-pachypoda/</plant:gardenOrgUrl>
+    <!-- Summer Oasis Extravaganza Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/SummerOasisExtravaganzaEdinburgh">
+        <dc:title>Summer Oasis Extravaganza</dc:title>
+        <ex:season>summer</ex:season>
+        <ex:description>Escape to the Summer Oasis Extravaganza, a spectacular exhibition that transforms the botanical gardens...</ex:description>
+        <ex:photoUrl>https://www.radiovacanta.ro/wp-content/uploads/2023/10/gradina-botanica-iasi.jpg</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/CoprosmaRhynchocarpaEdinburgh"/>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Abeliamosanensis">
-        <plant:name>Abelia mosanensis</plant:name>
-        <plant:photoUrl>https://xeraplants.com/wp-content/uploads/2021/01/Image-1-6-21-at-6.59-AM.jpeg</plant:photoUrl>
-        <plant:description>A fragrant abelia, Abelia mosanensis is a deciduous shrub with pink flowering buds that open to white, trumpet-shaped flowers.</plant:description>
-        <plant:plantHabit>Shrub</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Well-drained</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/128013/Fragrant-Abelia-Zabelia-tyaihyoni/</plant:gardenOrgUrl>
+    <!-- Plants in the Exhibitions at Edinburgh -->
+    <!-- American Licorice Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/AmericanLicoriceEdinburgh">
+        <dc:title>American licorice</dc:title>
+        <ex:description>American licorice, scientifically known as Glycyrrhiza lepidota...</ex:description>
+        <ex:plantHabit>Herbaceous</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained</ex:soilPreferences>
+        <ex:photoUrl>https://www.naturalistperspective.com/wp-content/uploads/2021/09/wild-licorice-green-burrs.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/82295/American-Licorice-Glycyrrhiza-lepidota/</ex:gardenOrgUrl>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Osmanthusdelavayi">
-        <plant:name>Osmanthus delavayi</plant:name>
-        <plant:photoUrl>https://static.ashwoodnurseries.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/s/osmanthus_delavyi_resized.jpg</plant:photoUrl>
-        <plant:description>This evergreen shrub, known for its small, fragrant white flowers and glossy leaves, is often used in hedges and as an ornamental plant.</plant:description>
-        <plant:plantHabit>Shrub</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Well-drained</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/130143/Delavay-Tea-Olive-Osmanthus-delavayi/</plant:gardenOrgUrl>
+    <!-- Coprosma Rhynchocarpa Edinburgh -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/CoprosmaRhynchocarpaEdinburgh">
+        <dc:title>Coprosma rhynchocarpa</dc:title>
+        <ex:description>A New Zealand native, this Coprosma species is a small shrub known for its glossy leaves and orange-red fruits...</ex:description>
+        <ex:plantHabit>Shrub</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained soil</ex:soilPreferences>
+        <ex:photoUrl>https://live.staticflickr.com/2861/34146264675_1985968d0f_b.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/201894/Woodland-Mirrorplant-Coprosma-rhynchocarpa/</ex:gardenOrgUrl>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/RoyalBotanicGardenEdinburgh"/>
+    </rdf:Description>
+    
+        <!-- Botanical Garden: Jardin des Plantes -->
+    <rdf:Description rdf:about="http://botaniq.org/gardens/JardinDesPlantes">
+        <dc:title>Jardin des Plantes</dc:title>
+        <ex:description>Bienvenue au Jardin des Plantes! Located in the heart of Paris, our botanical garden invites you to discover the wonders of nature...</ex:description>
+        <ex:price>FREE</ex:price>
+        <ex:rating>4.8</ex:rating>
+        <ex:photoUrl>https://www.whatsonnetwork.co.uk/uploads/800x600/bfc1cf8c53a093eb326962c7c21b37ed.jpg</ex:photoUrl>
+        <ex:location rdf:resource="http://botaniq.org/locations/JardinDesPlantesLocation"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/BloomsEleganceAffair"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/WinterWonderlandGala"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/WinterWonderland"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/AutumnHarvestArtistry"/>
+        <ex:isLocatedIn rdf:resource="http://botaniq.org/locations/JardinDesPlantesLocation"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Coprosmarhynchocarpa">
-        <plant:name>Coprosma rhynchocarpa</plant:name>
-        <plant:photoUrl>https://live.staticflickr.com/2861/34146264675_1985968d0f_b.jpg</plant:photoUrl>
-        <plant:description>A New Zealand native, this Coprosma species is a small shrub known for its glossy leaves and orange-red fruits.</plant:description>
-        <plant:plantHabit>Shrub</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Well-drained soil</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/201894/Woodland-Mirrorplant-Coprosma-rhynchocarpa/</plant:gardenOrgUrl>
+    <!-- Location of Jardin des Plantes -->
+    <rdf:Description rdf:about="http://botaniq.org/locations/JardinDesPlantesLocation">
+        <ex:city>Iasi</ex:city>
+        <ex:county>Iasi</ex:county>
+        <ex:country>Romania</ex:country>
+        <ex:streetName>Copou</ex:streetName>
+        <ex:postalCode>700143</ex:postalCode>
+        <ex:googleMapsLink>https://www.google.com/maps/place/Alexandru+Ioan+Cuza+University/@47.1634328,27.5628619,13z/data=!4m6!3m5!1s0x40cafb61af5ef507:0x95f1e37c73c23e74!8m2!3d47.1743589!4d27.571504!16zL20vMDk0NXEw?entry=ttu</ex:googleMapsLink>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Bistortabistortoides">
-        <plant:name>Bistorta bistortoides</plant:name>
-        <plant:photoUrl>https://burkeherbarium.org/imagecollection/wtu44000/md/wtu044467.jpg</plant:photoUrl>
-        <plant:description>Also known as American bistort or western bistort, this perennial herb is known for its dense clusters of small white or pink flowers.</plant:description>
-        <plant:plantHabit>Herbaceous</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Moist</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/84313/Western-Bistort-Bistorta-bistortoides/</plant:gardenOrgUrl>
+    <!-- Events at Jardin des Plantes -->
+    <!-- Blooms and Elegance Affair -->
+    <rdf:Description rdf:about="http://botaniq.org/events/BloomsEleganceAffair">
+        <dc:title>Blooms and Elegance Affair</dc:title>
+        <ex:date>11.12.2024</ex:date>
+        <ex:description>Join us for the Blooms and Elegance Affair on November 12, 2024...</ex:description>
+        <ex:photoUrl>https://www.laiasi.ro/wp-content/uploads/2023/10/flori-de-toamna-gradina-botanica-iasi-2023.jpg</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/JardinDesPlantes"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Santalumfreycinetianum">
-        <plant:name>Santalum freycinetianum</plant:name>
-        <plant:photoUrl>https://live.staticflickr.com/4128/5210117536_cdaa997870_c.jpg</plant:photoUrl>
-        <plant:description>Known as Freycinet sandalwood, this small tree is endemic to Hawaii, valued for its fragrant wood and part of important cultural and ecological systems.</plant:description>
-        <plant:plantHabit>Tree</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Dry</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/204157/Forest-Sandalwood-Santalum-freycinetianum/</plant:gardenOrgUrl>
+    <!-- Winter Wonderland Gala -->
+    <rdf:Description rdf:about="http://botaniq.org/events/WinterWonderlandGala">
+        <dc:title>Winter Wonderland Gala</dc:title>
+        <ex:date>12.20.2024</ex:date>
+        <ex:description>Embark on a magical journey at the Winter Wonderland Gala on December 20, 2024...</ex:description>
+        <ex:photoUrl>https://www.ziaruldeiasi.ro/app/gethumb.details.php?id=234275</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/JardinDesPlantes"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Tetramolopiumfiliforme">
-        <plant:name>Tetramolopium filiforme</plant:name>
-        <plant:photoUrl>https://live.staticflickr.com/4132/5187957281_7bf912fefd_c.jpg</plant:photoUrl>
-        <plant:description>An endemic Hawaiian plant, Tetramolopium filiforme is a small shrub known for its daisy-like yellow flowers and adaptability to various soil types.</plant:description>
-        <plant:plantHabit>Shrub</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Adaptable</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/202593/Tetramolopium-filiforme/</plant:gardenOrgUrl>
+    <!-- Exhibitions at Jardin des Plantes -->
+    <!-- Winter Wonderland Exhibition -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/WinterWonderland">
+        <dc:title>Winter Wonderland</dc:title>
+        <ex:season>winter</ex:season>
+        <ex:description>Step into a magical wonderland at the Winter Enchantment Wonderland exhibition...</ex:description>
+        <ex:photoUrl>https://1.bp.blogspot.com/-691f7Wtl4iI/TkbO2auw1TI/AAAAAAAAAQc/E8Ot4Nv2P4o/s1600/DSCF0268.jpg</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/AmericanLicoriceJardinDesPlantes"/>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/JardinDesPlantes"/>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://example.org/plant/Ipomoeaimperati">
-        <plant:name>Ipomoea imperati</plant:name>
-        <plant:photoUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Starr_010309-0539_Ipomoea_imperati.jpg/1200px-Starr_010309-0539_Ipomoea_imperati.jpg</plant:photoUrl>
-        <plant:description>Also known as beach morning glory, Ipomoea imperati is a fast-growing vine with white to pale purple flowers, often found in sandy coastal areas.</plant:description>
-        <plant:plantHabit>Vine</plant:plantHabit>
-        <plant:lifeCycle>Perennial</plant:lifeCycle>
-        <plant:soilPreferences>Sandy</plant:soilPreferences>
-        <plant:gardenOrgUrl>https://garden.org/plants/view/82639/Beach-Morning-Glory-Ipomoea-imperati/</plant:gardenOrgUrl>
+    <!-- Autumn Harvest Artistry Exhibition -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/AutumnHarvestArtistry">
+        <dc:title>Autumn Harvest Artistry</dc:title>
+        <ex:season>autumn</ex:season>
+        <ex:description>Experience the magic of fall at the Autumn Harvest Artistry exhibition...</ex:description>
+        <ex:photoUrl>https://www.ziaruldeiasi.ro/app/gethumb.details.php?id=234276</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/CoprosmaRhynchocarpaJardinDesPlantes"/>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/JardinDesPlantes"/>
     </rdf:Description>
 
+    <!-- Plants in the Exhibitions at Jardin des Plantes -->
+    <!-- American Licorice Jardin des Plantes -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/AmericanLicoriceJardinDesPlantes">
+        <dc:title>American licorice</dc:title>
+        <ex:description>American licorice, scientifically known as Glycyrrhiza lepidota...</ex:description>
+        <ex:plantHabit>Herbaceous</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained</ex:soilPreferences>
+        <ex:photoUrl>https://www.naturalistperspective.com/wp-content/uploads/2021/09/wild-licorice-green-burrs.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/82295/American-Licorice-Glycyrrhiza-lepidota/</ex:gardenOrgUrl>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/JardinDesPlantes"/>
+    </rdf:Description>
+
+    <!-- Coprosma Rhynchocarpa Jardin des Plantes -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/CoprosmaRhynchocarpaJardinDesPlantes">
+        <dc:title>Coprosma rhynchocarpa</dc:title>
+        <ex:description>A New Zealand native, this Coprosma species is a small shrub known for its glossy leaves and orange-red fruits...</ex:description>
+        <ex:plantHabit>Shrub</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained soil</ex:soilPreferences>
+        <ex:photoUrl>https://live.staticflickr.com/2861/34146264675_1985968d0f_b.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/201894/Woodland-Mirrorplant-Coprosma-rhynchocarpa/</ex:gardenOrgUrl>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/JardinDesPlantes"/>
+    </rdf:Description>
+        <!-- Botanical Garden: Singapore Botanic Gardens -->
+    <rdf:Description rdf:about="http://botaniq.org/gardens/SingaporeBotanicGardens">
+        <dc:title>Singapore Botanic Gardens</dc:title>
+        <ex:description>Step into a lush oasis at the Singapore Botanic Gardens. Open daily from 5:00 to 24:00...</ex:description>
+        <ex:price>FREE</ex:price>
+        <ex:rating>4.75</ex:rating>
+        <ex:photoUrl>https://www.uaic.ro/wp-content/uploads/2018/02/Foto-1.jpg</ex:photoUrl>
+        <ex:location rdf:resource="http://botaniq.org/locations/SingaporeBotanicGardensLocation"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/BloomsEleganceAffairSingapore"/>
+        <ex:hasEvent rdf:resource="http://botaniq.org/events/WinterWonderlandGalaSingapore"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/WinterWonderlandSingapore"/>
+        <ex:hasExhibition rdf:resource="http://botaniq.org/exhibitions/AutumnHarvestArtistrySingapore"/>
+        <ex:isLocatedIn rdf:resource="http://botaniq.org/locations/SingaporeBotanicGardensLocation"/>
+    </rdf:Description>
+
+    <!-- Location of Singapore Botanic Gardens -->
+    <rdf:Description rdf:about="http://botaniq.org/locations/SingaporeBotanicGardensLocation">
+        <ex:city>Iasi</ex:city>
+        <ex:county>Iasi</ex:county>
+        <ex:country>Romania</ex:country>
+        <ex:streetName>Copou</ex:streetName>
+        <ex:postalCode>700143</ex:postalCode>
+        <ex:googleMapsLink>https://www.google.com/maps/place/Alexandru+Ioan+Cuza+University/@47.1634328,27.5628619,13z/data=!4m6!3m5!1s0x40cafb61af5ef507:0x95f1e37c73c23e74!8m2!3d47.1743589!4d27.571504!16zL20vMDk0NXEw?entry=ttu</ex:googleMapsLink>
+    </rdf:Description>
+
+    <!-- Events at Singapore Botanic Gardens -->
+    <!-- Blooms and Elegance Affair Singapore -->
+    <rdf:Description rdf:about="http://botaniq.org/events/BloomsEleganceAffairSingapore">
+        <dc:title>Blooms and Elegance Affair</dc:title>
+        <ex:date>11.12.2024</ex:date>
+        <ex:description>Join us for the Blooms and Elegance Affair on November 12, 2024...</ex:description>
+        <ex:photoUrl>https://www.laiasi.ro/wp-content/uploads/2023/10/flori-de-toamna-gradina-botanica-iasi-2023.jpg</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/SingaporeBotanicGardens"/>
+    </rdf:Description>
+
+    <!-- Winter Wonderland Gala Singapore -->
+    <rdf:Description rdf:about="http://botaniq.org/events/WinterWonderlandGalaSingapore">
+        <dc:title>Winter Wonderland Gala</dc:title>
+        <ex:date>12.20.2024</ex:date>
+        <ex:description>Embark on a magical journey at the Winter Wonderland Gala on December 20, 2024...</ex:description>
+        <ex:photoUrl>https://www.ziaruldeiasi.ro/app/gethumb.details.php?id=234275</ex:photoUrl>
+        <ex:socialMediaLink>https://www.youtube.com/watch?v=dQw4w9WgXcQ</ex:socialMediaLink>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/SingaporeBotanicGardens"/>
+    </rdf:Description>
+
+    <!-- Exhibitions at Singapore Botanic Gardens -->
+    <!-- Winter Wonderland Exhibition Singapore -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/WinterWonderlandSingapore">
+        <dc:title>Winter Wonderland</dc:title>
+        <ex:season>winter</ex:season>
+        <ex:description>Step into a magical wonderland at the Winter Enchantment Wonderland exhibition...</ex:description>
+        <ex:photoUrl>https://1.bp.blogspot.com/-691f7Wtl4iI/TkbO2auw1TI/AAAAAAAAAQc/E8Ot4Nv2P4o/s1600/DSCF0268.jpg</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/AmericanLicoriceSingapore"/>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/SingaporeBotanicGardens"/>
+    </rdf:Description>
+
+    <!-- Autumn Harvest Artistry Exhibition Singapore -->
+    <rdf:Description rdf:about="http://botaniq.org/exhibitions/AutumnHarvestArtistrySingapore">
+        <dc:title>Autumn Harvest Artistry</dc:title>
+        <ex:season>autumn</ex:season>
+        <ex:description>Experience the magic of fall at the Autumn Harvest Artistry exhibition...</ex:description>
+        <ex:photoUrl>https://www.ziaruldeiasi.ro/app/gethumb.details.php?id=234276</ex:photoUrl>
+        <ex:includesPlant rdf:resource="http://botaniq.org/plants/CoprosmaRhynchocarpaSingapore"/>
+        <ex:hostedBy rdf:resource="http://botaniq.org/gardens/SingaporeBotanicGardens"/>
+    </rdf:Description>
+
+    <!-- Plants in the Exhibitions at Singapore Botanic Gardens -->
+    <!-- American Licorice Singapore -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/AmericanLicoriceSingapore">
+        <dc:title>American licorice</dc:title>
+        <ex:description>American licorice, scientifically known as Glycyrrhiza lepidota...</ex:description>
+        <ex:plantHabit>Herbaceous</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained</ex:soilPreferences>
+        <ex:photoUrl>https://www.naturalistperspective.com/wp-content/uploads/2021/09/wild-licorice-green-burrs.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/82295/American-Licorice-Glycyrrhiza-lepidota/</ex:gardenOrgUrl>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/SingaporeBotanicGardens"/>
+    </rdf:Description>
+
+    <!-- Coprosma Rhynchocarpa Singapore -->
+    <rdf:Description rdf:about="http://botaniq.org/plants/CoprosmaRhynchocarpaSingapore">
+        <dc:title>Coprosma rhynchocarpa</dc:title>
+        <ex:description>A New Zealand native, this Coprosma species is a small shrub known for its glossy leaves and orange-red fruits...</ex:description>
+        <ex:plantHabit>Shrub</ex:plantHabit>
+        <ex:lifeCycle>Perennial</ex:lifeCycle>
+        <ex:soilPreferences>Well-drained soil</ex:soilPreferences>
+        <ex:photoUrl>https://live.staticflickr.com/2861/34146264675_1985968d0f_b.jpg</ex:photoUrl>
+        <ex:gardenOrgUrl>https://garden.org/plants/view/201894/Woodland-Mirrorplant-Coprosma-rhynchocarpa/</ex:gardenOrgUrl>
+        <ex:foundInGarden rdf:resource="http://botaniq.org/gardens/SingaporeBotanicGardens"/>
+    </rdf:Description>
 </rdf:RDF>
